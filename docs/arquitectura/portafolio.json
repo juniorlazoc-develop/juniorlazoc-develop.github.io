@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "Portafolio: arquitectura",
+    "locale": "es",
+    "output": "docs/arquitectura/portafolio.html",
+    "quality_profile": "showcase",
+    "repository": {
+      "url": "https://github.com/juniorlazoc-develop/juniorlazoc-develop.github.io.git",
+      "provider": "github",
+      "link_mode": "web",
+      "revision": "8150684b0e25e8fe52643776cea704f7fdc2a12b"
+    }
+  },
+  "components": [
+    { "id": "junior", "type": "external", "label": "Junior", "sublabel": "edita y sube", "pos": [300, 40], "size": [150, 60] },
+    { "id": "repo", "type": "cloud", "label": "Repositorio", "sublabel": "GitHub, público", "pos": [560, 40], "size": [150, 60],
+      "sources": [ { "path": "README.md", "line": 1, "end_line": 7 } ] },
+    { "id": "css", "type": "frontend", "label": "css/", "sublabel": "base · componentes · mascotas", "pos": [810, 40], "size": [170, 60],
+      "sources": [ { "path": "index.html", "line": 33, "end_line": 36 } ] },
+    { "id": "fuentes", "type": "cloud", "label": "Google Fonts", "sublabel": "Space Grotesk · DM Sans", "pos": [1070, 40], "size": [160, 60],
+      "sources": [ { "path": "index.html", "line": 30 } ] },
+    { "id": "visitante", "type": "external", "label": "Visitante", "sublabel": "desde CV o LinkedIn", "pos": [40, 215], "size": [150, 60] },
+    { "id": "dominio", "type": "cloud", "label": "Dominio propio", "sublabel": "pendiente de compra", "pos": [300, 215], "size": [150, 60], "tag": "DNS",
+      "sources": [ { "path": "DOMINIO.md", "line": 1, "end_line": 9 } ] },
+    { "id": "pages", "type": "cloud", "label": "GitHub Pages", "sublabel": "HTTPS gratis", "pos": [560, 215], "size": [150, 60],
+      "sources": [ { "path": "README.md", "line": 3, "end_line": 5 } ] },
+    { "id": "index", "type": "frontend", "label": "index.html", "sublabel": "secciones del portafolio", "pos": [810, 215], "size": [170, 60],
+      "sources": [ { "path": "index.html", "line": 49, "end_line": 81 } ] },
+    { "id": "assets", "type": "database", "label": "assets/", "sublabel": "CV en PDF · imagen", "pos": [1070, 215], "size": [160, 60],
+      "sources": [ { "path": "index.html", "line": 377 } ] },
+    { "id": "js", "type": "frontend", "label": "js/principal.js", "sublabel": "navegación · contacto · robots", "pos": [810, 390], "size": [170, 60],
+      "sources": [ { "path": "index.html", "line": 39, "end_line": 43 }, { "path": "js/principal.js", "line": 6, "end_line": 13 } ] },
+    { "id": "preferencia", "type": "database", "label": "localStorage", "sublabel": "robots en pausa", "pos": [1070, 390], "size": [160, 60],
+      "sources": [ { "path": "js/mascotas.js", "line": 34, "end_line": 69 } ] }
+  ],
+  "connections": [
+    { "id": "push", "from": "junior", "to": "repo", "label": "git push" },
+    { "id": "publica", "from": "repo", "to": "pages", "label": "publica", "variant": "dashed" },
+    { "id": "enlace", "from": "visitante", "to": "dominio", "label": "enlace", "variant": "emphasis" },
+    { "id": "dns", "from": "dominio", "to": "pages", "label": "registros A", "variant": "emphasis" },
+    { "id": "sirve", "from": "pages", "to": "index", "label": "HTTPS", "variant": "emphasis" },
+    { "id": "estilos", "from": "index", "to": "css", "label": "estilos" },
+    { "id": "carga-fuentes", "from": "css", "to": "fuentes", "label": "fuentes" },
+    { "id": "descarga", "from": "index", "to": "assets", "label": "descarga CV" },
+    { "id": "scripts", "from": "index", "to": "js", "label": "defer" },
+    { "id": "recuerda", "from": "js", "to": "preferencia", "label": "guarda" }
+  ],
+  "cards": [
+    { "dot": "cyan", "title": "Publicación", "items": ["Cada git push se publica solo en uno o dos minutos", "Hoy responde en juniorlazoc-develop.github.io"] },
+    { "dot": "amber", "title": "Dominio", "items": ["Pendiente: registros A y CNAME hacia GitHub Pages", "Pasos en DOMINIO.md"] },
+    { "dot": "emerald", "title": "Sin compilar", "items": ["HTML, CSS y JavaScript puros, sin paquetes", "Actualizar el CV es reemplazar el PDF"] }
+  ]
+}
