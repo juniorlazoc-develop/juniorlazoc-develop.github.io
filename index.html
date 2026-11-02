@@ -5,7 +5,7 @@
     <!-- 01. Metadatos: título, descripción y vista previa al compartir. -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#faf6ef">
+    <meta name="theme-color" content="#0b1426">
     <meta name="description" content="Soy Junior Lazo, bachiller en Ingeniería de Sistemas en Huancayo, Perú. Trabajo en redes de fibra óptica y construyo sistemas web.">
 
     <!-- Si cambias de dominio, actualiza estas 3 direcciones (ver DOMINIO.md). -->
@@ -24,20 +24,22 @@
     <title>Junior Lazo | Redes y desarrollo web</title>
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 
-    <!-- 02. Tipografías: Fraunces (títulos con carácter) e Inter (texto fácil de leer). -->
+    <!-- 02. Tipografías: Space Grotesk (títulos con aire tecnológico) y DM Sans (texto fácil de leer). -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=DM+Sans:wght@400;500;700&display=swap">
 
     <!-- 03. Estilos: primero las bases, luego componentes y finalmente móvil. -->
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/componentes.css">
+    <link rel="stylesheet" href="css/mascotas.css">
     <link rel="stylesheet" href="css/adaptable.css">
 
     <!-- 04. JavaScript: defer espera a que el HTML esté listo. El orden importa. -->
     <script src="js/navegacion.js" defer></script>
     <script src="js/animaciones.js" defer></script>
     <script src="js/contacto.js" defer></script>
+    <script src="js/mascotas.js" defer></script>
     <script src="js/principal.js" defer></script>
   </head>
   <body>
@@ -47,7 +49,7 @@
     <header class="encabezado" id="encabezado">
       <div class="contenedor encabezado__interior">
         <a class="marca" href="#inicio">
-          <span class="marca__inicial" aria-hidden="true">J</span>
+          <span class="marca__inicial" aria-hidden="true">jl</span>
           Junior Lazo
         </a>
         <button class="boton-menu" id="boton-menu" type="button" aria-expanded="false" aria-controls="menu-principal" hidden>
@@ -57,7 +59,7 @@
           <a href="#sobre-mi">Sobre mí</a>
           <a href="#experiencia">Experiencia</a>
           <a href="#proyectos">Proyectos</a>
-          <a class="navegacion__destacado" href="#contacto">Escríbeme</a>
+          <a class="navegacion__destacado" href="#contacto" data-saludo="¡Te llevo al contacto! 🚀">Escríbeme</a>
         </nav>
       </div>
     </header>
@@ -68,20 +70,20 @@
       <section class="inicio" id="inicio" aria-labelledby="titulo-inicio">
         <div class="contenedor inicio__rejilla">
           <div class="inicio__texto" data-revelar>
-            <p class="saludo">Hola, soy</p>
-            <h1 id="titulo-inicio">Junior Lazo.</h1>
+            <p class="saludo"><span class="saludo__mano" aria-hidden="true">👋</span> Hola, soy</p>
+            <h1 id="titulo-inicio">Junior <span>Lazo.</span></h1>
             <p class="inicio__descripcion">
               Cuido redes de fibra óptica de día y construyo sistemas web que resuelven problemas reales.
               Me gusta entender cómo funcionan las cosas, desde el cable hasta la pantalla.
             </p>
             <div class="acciones">
-              <a class="boton boton--principal" href="#contacto">Conversemos</a>
-              <a class="boton boton--secundario" href="assets/CV_Junior_Lazo_Chileno.pdf" download>Descargar mi CV</a>
+              <a class="boton boton--principal" href="#contacto" data-saludo="¡Conectando con Junior! 📡">Conversemos</a>
+              <a class="boton boton--secundario" href="assets/CV_Junior_Lazo_Chileno.pdf" download data-saludo="¡Gracias por llevarte mi CV! 📄">Descargar mi CV</a>
             </div>
           </div>
 
           <aside class="ahora" aria-labelledby="titulo-ahora" data-revelar>
-            <div class="ahora__avatar" aria-hidden="true">JL</div>
+            <div class="ahora__avatar" data-mascota="celeste" aria-hidden="true"></div>
             <h2 class="ahora__titulo" id="titulo-ahora">Ahora mismo</h2>
             <ul class="ahora__lista">
               <li>
@@ -102,6 +104,12 @@
               </li>
             </ul>
           </aside>
+        </div>
+
+        <!-- Paseo: aquí caminan los robots (Bitbots). Son decorativos (aria-hidden). -->
+        <div class="contenedor">
+          <div class="paseo" data-paseo="4" aria-hidden="true"></div>
+          <button class="control-mascotas" id="control-mascotas" type="button" aria-pressed="false" hidden>Pausar robots</button>
         </div>
       </section>
 
@@ -196,7 +204,7 @@
           </div>
 
           <div class="proyectos__rejilla">
-            <article class="proyecto proyecto--salvia" data-revelar>
+            <article class="proyecto proyecto--celeste" data-revelar data-saludo="¡Este detecta cortes en segundos! ⚡">
               <p class="proyecto__tipo">Redes · Monitoreo</p>
               <h3>Detector de cortes masivos</h3>
               <p>
@@ -216,7 +224,7 @@
               </ul>
             </article>
 
-            <article class="proyecto proyecto--terracota" data-revelar>
+            <article class="proyecto proyecto--ambar" data-revelar data-saludo="¡Mi tesis! Reportes en un clic 📊">
               <p class="proyecto__tipo">Tesis · Sector agrario</p>
               <h3>AgroChupaca</h3>
               <p>
@@ -236,7 +244,7 @@
               </ul>
             </article>
 
-            <article class="proyecto proyecto--arena" data-revelar>
+            <article class="proyecto proyecto--turquesa" data-revelar data-saludo="¡FastAPI + React en acción! ☁️">
               <p class="proyecto__tipo">Proyecto personal</p>
               <h3>Mi Nube</h3>
               <p>
@@ -255,7 +263,7 @@
               </ul>
             </article>
 
-            <article class="proyecto proyecto--lavanda" data-revelar>
+            <article class="proyecto proyecto--acero" data-revelar data-saludo="¡Tecnología al servicio de emergencias! 🚓">
               <p class="proyecto__tipo">Sector público · 2024</p>
               <h3>Central 105</h3>
               <p>
@@ -283,18 +291,22 @@
           <h2 id="titulo-habilidades" data-revelar>Con qué trabajo</h2>
           <div class="habilidades__rejilla">
             <div class="habilidad" data-revelar>
+              <span class="habilidad__icono" aria-hidden="true">🛰️</span>
               <h3>Redes</h3>
               <p>TCP/IP y modelo OSI, routing y switching (OSPF, BGP), VLAN, subneteo, NAT/CGNAT, VPN IPsec y fibra óptica GPON.</p>
             </div>
             <div class="habilidad" data-revelar>
+              <span class="habilidad__icono" aria-hidden="true">💻</span>
               <h3>Desarrollo web</h3>
               <p>JavaScript, React, Next.js, Tailwind CSS, Node.js, Python con Django y FastAPI, PHP con Laravel, MySQL, PostgreSQL, Git y GitHub.</p>
             </div>
             <div class="habilidad" data-revelar>
+              <span class="habilidad__icono" aria-hidden="true">☁️</span>
               <h3>Cloud y automatización</h3>
               <p>Google Cloud, scripts en Python para automatizar tareas, monitoreo y diagnóstico.</p>
             </div>
             <div class="habilidad" data-revelar>
+              <span class="habilidad__icono" aria-hidden="true">🤝</span>
               <h3>Cómo trabajo</h3>
               <p>Resuelvo problemas con calma, trabajo bien en equipo y sigo aprendiendo. Inglés intermedio.</p>
             </div>
@@ -356,18 +368,27 @@
           <p class="estado-copia" id="estado-copia" role="status" aria-live="polite"></p>
           <ul class="contacto__enlaces">
             <li>
-              <a href="https://wa.me/51964007096" target="_blank" rel="noopener noreferrer">WhatsApp · +51 964 007 096</a>
+              <a href="https://wa.me/51964007096" target="_blank" rel="noopener noreferrer" data-saludo="¡Abriendo WhatsApp! 💬">WhatsApp · +51 964 007 096</a>
             </li>
             <li>
-              <a href="https://www.linkedin.com/in/juniorlazo" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              <a href="https://www.linkedin.com/in/juniorlazo" target="_blank" rel="noopener noreferrer" data-saludo="¡Nos vemos en LinkedIn! 👔">LinkedIn</a>
             </li>
             <li>
-              <a href="assets/CV_Junior_Lazo_Chileno.pdf" download>Descargar mi CV (PDF)</a>
+              <a href="assets/CV_Junior_Lazo_Chileno.pdf" download data-saludo="¡Gracias por llevarte mi CV! 📄">Descargar mi CV (PDF)</a>
             </li>
           </ul>
         </div>
+        <div class="contenedor">
+          <div class="paseo" data-paseo="3" aria-hidden="true"></div>
+        </div>
       </section>
     </main>
+
+    <!-- Saludo flotante: un robot asoma abajo a la derecha (lo controla mascotas.js). -->
+    <div class="saludo-mascota" id="saludo-mascota" aria-hidden="true">
+      <p class="saludo-mascota__texto" id="saludo-mascota-texto"></p>
+      <div class="saludo-mascota__dibujo" data-mascota="ambar"></div>
+    </div>
 
     <!-- 13. Pie de página. -->
     <footer class="pie-pagina">

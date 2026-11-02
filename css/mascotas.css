@@ -1,0 +1,262 @@
+/* ============================================================
+   MASCOTAS.CSS — Los "Bitbots": robotitos que pasean por la página.
+   01. Robot / 02. Paseo / 03. Saltos y mensajes / 04. Chispas /
+   05. Saludo flotante / 06. Pausa
+   ============================================================ */
+
+
+/* 01. El robot. El SVG lo dibuja mascotas.js; aquí se colorea y se anima. */
+
+.bot {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.bot__cabeza, .bot__torso, .bot__pierna, .bot__tornillo {
+  fill: var(--color-bot, var(--celeste));
+}
+.bot__torso, .bot__pierna, .bot__tornillo {
+  filter: brightness(.78);
+}
+.bot__visor {
+  fill: var(--marino);
+}
+.bot__ojo {
+  fill: var(--turquesa);
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: parpadear 4.5s infinite;
+}
+.bot__panel {
+  fill: var(--marino);
+  opacity: .35;
+}
+.bot__antena {
+  stroke: var(--color-bot, var(--celeste));
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+.bot__luz {
+  fill: var(--ambar);
+  animation: encender 1.2s steps(2, jump-none) infinite;
+}
+.bot__pierna {
+  transform-box: fill-box;
+  transform-origin: top center;
+}
+@keyframes parpadear {
+  0%, 92%, 100% { transform: scaleY(1); }
+  95% { transform: scaleY(.1); }
+}
+@keyframes encender {
+  from { opacity: 1; }
+  to { opacity: .35; }
+}
+
+/* Colores: cada robot recibe uno al azar. */
+.mascota--celeste { --color-bot: var(--celeste); }
+.mascota--turquesa { --color-bot: var(--turquesa); }
+.mascota--ambar { --color-bot: var(--ambar); }
+.mascota--acero { --color-bot: var(--acero); }
+
+/* 02. Paseo: franja por donde caminan los robots de lado a lado. */
+
+.paseo {
+  position: relative;
+  height: 130px;
+  overflow: hidden;
+}
+.paseo::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 8px;
+  border-bottom: 3px dashed #8ecdf240;
+}
+.contacto .paseo::after {
+  border-color: #0b142633;
+}
+.mascota {
+  position: absolute;
+  bottom: 10px;
+  left: var(--posicion, 50%);
+  width: 58px;
+  height: 58px;
+  cursor: pointer;
+  animation: caminar var(--duracion, 18s) linear var(--retraso, 0s) infinite;
+}
+.mascota--al-reves {
+  animation-direction: reverse;
+}
+.mascota:hover {
+  animation-play-state: paused;
+}
+.mascota__cuerpo {
+  width: 100%;
+  height: 100%;
+  animation: rebotar .3s ease-in-out infinite alternate;
+}
+.mascota .bot__pierna {
+  animation: paso .3s ease-in-out infinite alternate;
+}
+.mascota .bot__pierna--derecha {
+  animation-direction: alternate-reverse;
+}
+@keyframes caminar {
+  from { left: -70px; }
+  to { left: 100%; }
+}
+@keyframes rebotar {
+  from { transform: translateY(0); }
+  to { transform: translateY(-3px); }
+}
+@keyframes paso {
+  from { transform: rotate(-20deg); }
+  to { transform: rotate(20deg); }
+}
+
+/* 03. Al hacer clic: salta con una voltereta y dice algo. */
+
+.mascota--saltando .mascota__cuerpo,
+.ahora__avatar.mascota--saltando .bot {
+  animation: saltar .75s var(--rebote);
+}
+@keyframes saltar {
+  0% { transform: translateY(0); }
+  20% { transform: translateY(2px) scaleY(.9); }
+  60% { transform: translateY(-36px) rotate(-360deg); }
+  100% { transform: translateY(0) rotate(-360deg); }
+}
+.mascota__burbuja {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  translate: -50% 0;
+  padding: 4px 12px;
+  border-radius: 8px;
+  background: white;
+  color: var(--marino);
+  font-family: var(--fuente-titulos);
+  font-size: 14px;
+  font-weight: 700;
+  white-space: nowrap;
+  opacity: 0;
+  scale: .5;
+  transition: opacity .2s, scale .3s var(--rebote);
+  pointer-events: none;
+}
+.mascota__burbuja::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  translate: -50% 0;
+  border: 6px solid transparent;
+  border-top-color: white;
+}
+.mascota--hablando .mascota__burbuja {
+  opacity: 1;
+  scale: 1;
+}
+
+/* 04. Chispas: piezas y rayos que salen del punto del clic. */
+
+.confeti {
+  position: fixed;
+  z-index: 60;
+  width: 10px;
+  height: 10px;
+  margin: -5px 0 0 -5px;
+  border-radius: 2px;
+  pointer-events: none;
+  animation: volar 1.1s cubic-bezier(.2, .8, .4, 1) forwards;
+}
+.confeti--simbolo {
+  width: auto;
+  height: auto;
+  background: none !important;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1;
+}
+@keyframes volar {
+  0% {
+    transform: translate(0, 0) rotate(0) scale(.6);
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--dx), var(--dy)) rotate(var(--giro)) scale(.9);
+    opacity: 0;
+  }
+}
+
+/* 05. Saludo flotante: un robot asoma en la esquina con un mensaje. */
+
+.saludo-mascota {
+  position: fixed;
+  right: 18px;
+  bottom: 0;
+  z-index: 50;
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  pointer-events: none;
+  transform: translateY(130%);
+  transition: transform .5s var(--rebote);
+}
+.saludo-mascota--visible {
+  transform: translateY(0);
+}
+.saludo-mascota__texto {
+  margin-bottom: 64px;
+  padding: 10px 16px;
+  border-radius: 12px 12px 2px 12px;
+  background: white;
+  color: var(--marino);
+  font-family: var(--fuente-titulos);
+  font-weight: 700;
+  font-size: 16px;
+  box-shadow: var(--sombra);
+  max-width: 240px;
+}
+.saludo-mascota__dibujo {
+  width: 86px;
+  height: 86px;
+  margin-bottom: -6px;
+}
+.saludo-mascota--visible .bot {
+  animation: saltar .75s var(--rebote) .3s;
+}
+
+/* Botón para pausar o reanudar a los robots. */
+
+.control-mascotas {
+  display: block;
+  margin: 0 0 16px auto;
+  background: transparent;
+  border: 2px solid var(--borde);
+  border-radius: 999px;
+  padding: 6px 16px;
+  color: var(--texto-secundario);
+  font-size: 14px;
+  font-weight: 700;
+}
+.control-mascotas:hover:not(:disabled) {
+  border-color: var(--celeste);
+  color: var(--texto);
+}
+
+/* 06. Pausa manual: los robots se quedan quietos donde estén. */
+
+.mascotas-pausadas .mascota,
+.mascotas-pausadas .mascota * {
+  animation-play-state: paused !important;
+}
+.mascotas-pausadas .confeti {
+  display: none;
+}

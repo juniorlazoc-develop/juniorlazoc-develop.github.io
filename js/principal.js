@@ -9,4 +9,5 @@
   window.Portafolio.iniciarNavegacion();
   window.Portafolio.iniciarAnimaciones();
   window.Portafolio.iniciarContacto();
+  window.Portafolio.iniciarMascotas();
 })();

@@ -20,6 +20,8 @@ window.Portafolio.iniciarContacto = function iniciarContacto() {
       if (!navigator.clipboard || !window.isSecureContext) throw new Error('Portapapeles no disponible');
       await navigator.clipboard.writeText(correo);
       estado.textContent = 'Correo copiado. Ya puedes pegarlo en tu mensaje.';
+      // Si las mascotas están cargadas, una celebra la copia.
+      window.Portafolio.mostrarSaludo?.('¡Correo copiado! 📬');
     } catch {
       const seleccion = window.getSelection();
       const rango = document.createRange();

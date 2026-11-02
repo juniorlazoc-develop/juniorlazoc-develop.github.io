@@ -26,11 +26,13 @@ y abre `http://127.0.0.1:8000`. Detén el servidor con Ctrl+C.
 ├── css/
 │   ├── base.css          Colores, tipografías y botones
 │   ├── componentes.css   Diseño de cada sección
+│   ├── mascotas.css      Robots (Bitbots), chispas y saludo flotante
 │   └── adaptable.css     Tableta, móvil e impresión
 ├── js/
 │   ├── navegacion.js     Menú móvil y sección activa
 │   ├── animaciones.js    Aparición suave al desplazarse
 │   ├── contacto.js       Botón para copiar el correo
+│   ├── mascotas.js       Robots que caminan y animaciones al hacer clic
 │   └── principal.js      Arranca las funciones anteriores
 ├── assets/
 │   ├── CV_Junior_Lazo_Chileno.pdf   Tu CV (se reemplaza al actualizarlo)
@@ -43,12 +45,13 @@ Clases, identificadores y funciones usan nombres en español. Las etiquetas HTML
 
 ## 3. El diseño
 
-Estilo cálido y cercano:
+Estilo tecnológico y divertido:
 
-- **Colores** (en `css/base.css`, dentro de `:root`): crema de fondo, tinta café oscuro para el texto, verde salvia y terracota como acentos. Cambia una variable y se actualiza todo el sitio.
-- **Tipografías:** *Fraunces* (serif con carácter) para los títulos e *Inter* para el texto. Se cargan desde Google Fonts.
+- **Colores** (en `css/base.css`, dentro de `:root`): azul marino de fondo con acentos claros: celeste, turquesa, ámbar y gris acero. Cambia una variable y se actualiza todo el sitio.
+- **Tipografías:** *Space Grotesk* para los títulos y *DM Sans* para el texto. Se cargan desde Google Fonts.
 - **Tono:** textos en primera persona, como si conversaras con quien te lee.
-- **Accesibilidad:** todo el texto cumple el contraste WCAG AA, se puede navegar con teclado y, si el visitante pide menos movimiento en su sistema, no hay animaciones.
+- **Mascotas (Bitbots):** robotitos que caminan en el inicio y en el contacto. Al tocarlos saltan con una voltereta y dicen una frase de redes ("¡Ping: 1 ms!"). Al pulsar botones, enlaces o tarjetas salen chispas, y un robot asoma en la esquina con el mensaje que indica el atributo `data-saludo` del HTML.
+- **Accesibilidad:** todo el texto cumple el contraste WCAG AA y se puede navegar con teclado. Los robots son decorativos (`aria-hidden`), se pueden pausar con el botón **Pausar robots** y, si el visitante pide menos movimiento en su sistema, se quedan quietos y no hay chispas.
 
 Convención de clases inspirada en BEM:
 
@@ -66,6 +69,8 @@ Convención de clases inspirada en BEM:
 | Agregar un proyecto | Copia un `<article class="proyecto …">` en la sección 09 de `index.html`; cambia la variante de color si quieres |
 | Un puesto de trabajo | Copia un `<article class="puesto">` en la sección 08 |
 | Colores | Variables de `css/base.css` |
+| Frases de los robots | Lista `frases` en `js/mascotas.js` y atributos `data-saludo` en `index.html` |
+| Dibujo de los robots | Función `dibujarBot()` en `js/mascotas.js` |
 | Cómo se ve en móvil | `css/adaptable.css` |
 | El CV | Sigue `ACTUALIZAR-CV.md` |
 
@@ -78,6 +83,7 @@ Puedes editar directamente en GitHub: abre el archivo, pulsa el lápiz ✏️, c
 | `iniciarNavegacion()` | Menú móvil (abre, cierra con Escape o clic fuera) y marca la sección actual |
 | `iniciarAnimaciones()` | Aparición suave al desplazarse; se desactiva si el sistema pide menos movimiento |
 | `iniciarContacto()` | Copia el correo; si el navegador no lo permite, lo selecciona y explica cómo copiarlo |
+| `iniciarMascotas()` | Crea los robots, los hace saltar al tocarlos, lanza chispas en cada clic y muestra el saludo de la esquina (`mostrarSaludo()`) |
 
 `principal.js` las ejecuta en ese orden. Sin JavaScript, todo el contenido y los enlaces siguen funcionando.
 

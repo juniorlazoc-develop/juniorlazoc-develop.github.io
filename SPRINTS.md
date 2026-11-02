@@ -9,16 +9,17 @@ Un sprint es una etapa corta con un objetivo, tareas y una forma concreta de com
 
 **Aceptación:** contenido disponible sin JavaScript, un solo `h1`, títulos jerárquicos y enlaces internos válidos.
 
-## Sprint 2 — Diseño cálido y cercano (hecho, 1 nov 2026)
+## Sprint 2 — Diseño propio con mascotas (hecho, 1 nov 2026)
 
-**Objetivo:** que la página se sienta personal y no robotizada.
+**Objetivo:** que la página se sienta personal, divertida y con identidad propia.
 
-- Paleta crema, tinta, verde salvia y terracota; títulos en serif (Fraunces).
-- Textos reescritos en primera persona: saludo "Hola, soy Junior", tarjeta "Ahora mismo", "Cosas que he construido", "¿Conversamos?".
-- Se quitaron las etiquetas técnicas ("01 / SOBRE MÍ"), el diagrama de órbitas y el botón para pausar animaciones (se respeta la preferencia del sistema).
-- Nueva imagen para compartir y nuevo icono.
+- Azul marino con acentos celeste, turquesa, ámbar y acero; tipografías Space Grotesk y DM Sans.
+- Textos en primera persona: "Hola, soy Junior", tarjeta "Ahora mismo", "Cosas que he construido", "¿Conversamos?".
+- **Bitbots:** robotitos que caminan, saltan al tocarlos y dicen frases de redes; chispas al hacer clic; un robot asoma en la esquina al descargar el CV, copiar el correo o abrir un proyecto.
+- Botón para pausar los robots (guardado en el navegador) y respeto de "movimiento reducido".
+- Nueva imagen para compartir, icono y página 404 con robot.
 
-**Verificado:** sin desplazamiento horizontal de 320 a 1440 px, todo el texto cumple el contraste WCAG AA y el menú móvil abre y cierra con clic y con Escape.
+**Verificado:** sin desplazamiento horizontal de 320 a 1440 px, todo el texto cumple el contraste WCAG AA, el menú móvil abre y cierra con clic y con Escape, y con movimiento reducido los robots quedan quietos y visibles.
 
 ## Sprint 3 — Tus proyectos reales (hecho, 1 nov 2026)
 
