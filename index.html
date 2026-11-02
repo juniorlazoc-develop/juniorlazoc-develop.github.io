@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="es">
+  <head>
+
+    <!-- 01. Metadatos: título, descripción y vista previa al compartir. -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#faf6ef">
+    <meta name="description" content="Soy Junior Lazo, bachiller en Ingeniería de Sistemas en Huancayo, Perú. Trabajo en redes de fibra óptica y construyo sistemas web.">
+
+    <!-- Si cambias de dominio, actualiza estas 3 direcciones (ver DOMINIO.md). -->
+    <meta property="og:url" content="https://juniorlazoc-develop.github.io/">
+    <meta property="og:image" content="https://juniorlazoc-develop.github.io/assets/compartir.png">
+    <link rel="canonical" href="https://juniorlazoc-develop.github.io/">
+
+    <meta property="og:title" content="Junior Lazo | Redes y desarrollo web">
+    <meta property="og:description" content="Cuido redes de fibra óptica y construyo sistemas web que resuelven problemas reales.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_PE">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Junior Lazo: redes y desarrollo web">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>Junior Lazo | Redes y desarrollo web</title>
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+    <!-- 02. Tipografías: Fraunces (títulos con carácter) e Inter (texto fácil de leer). -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap">
+
+    <!-- 03. Estilos: primero las bases, luego componentes y finalmente móvil. -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/componentes.css">
+    <link rel="stylesheet" href="css/adaptable.css">
+
+    <!-- 04. JavaScript: defer espera a que el HTML esté listo. El orden importa. -->
+    <script src="js/navegacion.js" defer></script>
+    <script src="js/animaciones.js" defer></script>
+    <script src="js/contacto.js" defer></script>
+    <script src="js/principal.js" defer></script>
+  </head>
+  <body>
+    <a class="saltar-contenido" href="#contenido">Saltar al contenido</a>
+
+    <!-- 05. Encabezado: nombre y navegación. -->
+    <header class="encabezado" id="encabezado">
+      <div class="contenedor encabezado__interior">
+        <a class="marca" href="#inicio">
+          <span class="marca__inicial" aria-hidden="true">J</span>
+          Junior Lazo
+        </a>
+        <button class="boton-menu" id="boton-menu" type="button" aria-expanded="false" aria-controls="menu-principal" hidden>
+          <span id="texto-menu">Menú</span>
+        </button>
+        <nav class="navegacion" id="menu-principal" aria-label="Navegación principal">
+          <a href="#sobre-mi">Sobre mí</a>
+          <a href="#experiencia">Experiencia</a>
+          <a href="#proyectos">Proyectos</a>
+          <a class="navegacion__destacado" href="#contacto">Escríbeme</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="contenido">
+
+      <!-- 06. Inicio: saludo y tarjeta "ahora mismo". -->
+      <section class="inicio" id="inicio" aria-labelledby="titulo-inicio">
+        <div class="contenedor inicio__rejilla">
+          <div class="inicio__texto" data-revelar>
+            <p class="saludo">Hola, soy</p>
+            <h1 id="titulo-inicio">Junior Lazo.</h1>
+            <p class="inicio__descripcion">
+              Cuido redes de fibra óptica de día y construyo sistemas web que resuelven problemas reales.
+              Me gusta entender cómo funcionan las cosas, desde el cable hasta la pantalla.
+            </p>
+            <div class="acciones">
+              <a class="boton boton--principal" href="#contacto">Conversemos</a>
+              <a class="boton boton--secundario" href="assets/CV_Junior_Lazo_Chileno.pdf" download>Descargar mi CV</a>
+            </div>
+          </div>
+
+          <aside class="ahora" aria-labelledby="titulo-ahora" data-revelar>
+            <div class="ahora__avatar" aria-hidden="true">JL</div>
+            <h2 class="ahora__titulo" id="titulo-ahora">Ahora mismo</h2>
+            <ul class="ahora__lista">
+              <li>
+                <span class="ahora__icono" aria-hidden="true">📍</span>
+                Vivo en Huancayo, Perú
+              </li>
+              <li>
+                <span class="ahora__icono" aria-hidden="true">🛠️</span>
+                Auxiliar de Redes en Global Fiber
+              </li>
+              <li>
+                <span class="ahora__icono" aria-hidden="true">🎓</span>
+                Bachiller en Ingeniería de Sistemas e Informática
+              </li>
+              <li>
+                <span class="ahora__icono" aria-hidden="true">🌱</span>
+                Aprendiendo React, FastAPI y despliegue en la nube
+              </li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <!-- 07. Sobre mí: presentación en primera persona. -->
+      <section class="seccion sobre-mi" id="sobre-mi" aria-labelledby="titulo-sobre-mi">
+        <div class="contenedor sobre-mi__rejilla">
+          <h2 id="titulo-sobre-mi" data-revelar>Un poco sobre mí</h2>
+          <div class="sobre-mi__texto" data-revelar>
+            <p class="destacado">
+              Empecé en la tecnología por curiosidad y me quedé porque me gusta ver que algo que construí le sirve a alguien.
+            </p>
+            <p>
+              Hoy trabajo monitoreando redes GPON: cuando un cliente se queda sin internet, ayudo a encontrar por qué y a resolverlo rápido.
+              Ese día a día me enseñó a mantener la calma, a leer bien los datos y a comunicarme con personas que necesitan una respuesta.
+            </p>
+            <p>
+              Fuera de las redes, programo. Varios de mis proyectos nacieron de un problema que vi de cerca: detectar cortes masivos antes
+              de que lleguen los reclamos, ordenar las visitas técnicas a productores del campo u organizar mi propio día.
+            </p>
+            <p>
+              Me considero alguien que aprende rápido, pregunta cuando no sabe y disfruta trabajar en equipo.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 08. Experiencia: cada article es un puesto de trabajo. -->
+      <section class="seccion experiencia" id="experiencia" aria-labelledby="titulo-experiencia">
+        <div class="contenedor">
+          <h2 id="titulo-experiencia" data-revelar>Dónde he trabajado</h2>
+          <div class="trayectoria">
+            <article class="puesto" data-revelar>
+              <p class="puesto__periodo">
+                Sep 2025 — hoy
+                <span class="insignia">Actual</span>
+              </p>
+              <div>
+                <h3>Auxiliar de Redes</h3>
+                <p class="puesto__empresa">Global Fiber</p>
+                <p>
+                  Monitoreo OLT Nokia y ZTE en redes de acceso GPON, diagnostico fallas de conectividad y doy soporte técnico,
+                  remoto y en campo, a clientes residenciales y corporativos.
+                </p>
+              </div>
+            </article>
+            <article class="puesto" data-revelar>
+              <p class="puesto__periodo">Abr — Jul 2024</p>
+              <div>
+                <h3>Arquitectura y desarrollo de sistema web</h3>
+                <p class="puesto__empresa">Policía Nacional del Perú · OFITIC Región Junín</p>
+                <p>
+                  Diseñé la arquitectura y el modelo de base de datos de Central 105, un sistema para gestionar emergencias,
+                  y apoyé su desarrollo y documentación técnica.
+                </p>
+              </div>
+            </article>
+            <article class="puesto" data-revelar>
+              <p class="puesto__periodo">Nov 2023 — Jun 2024</p>
+              <div>
+                <h3>Administrador</h3>
+                <p class="puesto__empresa">ML Services SAC</p>
+                <p>
+                  Implementé soluciones tecnológicas para mejorar procesos internos y me encargué del soporte técnico y
+                  del mantenimiento preventivo de los equipos.
+                </p>
+              </div>
+            </article>
+            <article class="puesto" data-revelar>
+              <p class="puesto__periodo">Sep — Nov 2023</p>
+              <div>
+                <h3>Administrador de base de datos</h3>
+                <p class="puesto__empresa">San Berman Constructora &amp; Consultora</p>
+                <p>
+                  Administré y optimicé bases de datos, apoyé el diseño y la mejora del data center y realicé pruebas de la
+                  infraestructura tecnológica.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- 09. Proyectos: problema, solución y tecnologías. El código es privado. -->
+      <section class="seccion proyectos" id="proyectos" aria-labelledby="titulo-proyectos">
+        <div class="contenedor">
+          <div class="cabecera-seccion" data-revelar>
+            <h2 id="titulo-proyectos">Cosas que he construido</h2>
+            <p>
+              Cada proyecto empezó con un problema concreto. El código es privado,
+              pero con gusto lo muestro y lo explico en una entrevista.
+            </p>
+          </div>
+
+          <div class="proyectos__rejilla">
+            <article class="proyecto proyecto--salvia" data-revelar>
+              <p class="proyecto__tipo">Redes · Monitoreo</p>
+              <h3>Detector de cortes masivos</h3>
+              <p>
+                Cuando cae un sector de la red, cada minuto cuenta. Este sistema consulta las OLT por SSH (solo lectura),
+                agrupa las ONT caídas por puerto, plano y troncal, y clasifica el corte: de fibra o eléctrico, parcial o total.
+              </p>
+              <ul class="proyecto__logros">
+                <li>Revisa la red en ciclos de 30 segundos.</li>
+                <li>Ignora clientes que ya estaban caídos para no dar falsas alarmas.</li>
+                <li>Avisos por Telegram y 48 pruebas automáticas.</li>
+              </ul>
+              <ul class="chips" aria-label="Tecnologías">
+                <li>Python</li>
+                <li>Django</li>
+                <li>Netmiko / SSH</li>
+                <li>PostgreSQL</li>
+              </ul>
+            </article>
+
+            <article class="proyecto proyecto--terracota" data-revelar>
+              <p class="proyecto__tipo">Tesis · Sector agrario</p>
+              <h3>AgroChupaca</h3>
+              <p>
+                Un sistema web para que la Agencia Agraria Chupaca registre y reporte las visitas técnicas a productores
+                agropecuarios, con parcelas en el mapa y reportes listos en un clic.
+              </p>
+              <ul class="proyecto__logros">
+                <li>Usuarios con roles: administrador, jefe y técnico.</li>
+                <li>Mapa de predios y verificación de la ubicación de cada visita.</li>
+                <li>Reportes en PDF y Excel, y un tablero de indicadores.</li>
+              </ul>
+              <ul class="chips" aria-label="Tecnologías">
+                <li>Django</li>
+                <li>PostgreSQL</li>
+                <li>Leaflet</li>
+                <li>Chart.js</li>
+              </ul>
+            </article>
+
+            <article class="proyecto proyecto--arena" data-revelar>
+              <p class="proyecto__tipo">Proyecto personal</p>
+              <h3>Mi Nube</h3>
+              <p>
+                Mi propia agenda en la nube: pendientes, bitácora de lo que hice y control de gastos en soles.
+                La construyo paso a paso para aprender cómo se conectan un frontend y una API.
+              </p>
+              <ul class="proyecto__logros">
+                <li>Inicio de sesión seguro con JWT y contraseñas cifradas con Argon2.</li>
+                <li>Buscar, filtrar y editar pendientes; gráfico de gastos.</li>
+                <li>Siguiente paso: fotos y despliegue con Docker.</li>
+              </ul>
+              <ul class="chips" aria-label="Tecnologías">
+                <li>React</li>
+                <li>FastAPI</li>
+                <li>SQLite</li>
+              </ul>
+            </article>
+
+            <article class="proyecto proyecto--lavanda" data-revelar>
+              <p class="proyecto__tipo">Sector público · 2024</p>
+              <h3>Central 105</h3>
+              <p>
+                Plataforma web de la Policía Nacional del Perú para gestionar emergencias. Participé en la estructura
+                técnica: cómo se organiza la información y cómo se diseña el sistema.
+              </p>
+              <ul class="proyecto__logros">
+                <li>Arquitectura de la plataforma web.</li>
+                <li>Modelo de base de datos para las emergencias.</li>
+                <li>Documentación técnica y apoyo al desarrollo.</li>
+              </ul>
+              <ul class="chips" aria-label="Áreas">
+                <li>Arquitectura</li>
+                <li>Base de datos</li>
+                <li>Documentación</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- 10. Habilidades: agrupadas por área, sin porcentajes inventados. -->
+      <section class="seccion habilidades" id="habilidades" aria-labelledby="titulo-habilidades">
+        <div class="contenedor">
+          <h2 id="titulo-habilidades" data-revelar>Con qué trabajo</h2>
+          <div class="habilidades__rejilla">
+            <div class="habilidad" data-revelar>
+              <h3>Redes</h3>
+              <p>TCP/IP y modelo OSI, routing y switching (OSPF, BGP), VLAN, subneteo, NAT/CGNAT, VPN IPsec y fibra óptica GPON.</p>
+            </div>
+            <div class="habilidad" data-revelar>
+              <h3>Desarrollo web</h3>
+              <p>JavaScript, React, Next.js, Tailwind CSS, Node.js, Python con Django y FastAPI, PHP con Laravel, MySQL, PostgreSQL, Git y GitHub.</p>
+            </div>
+            <div class="habilidad" data-revelar>
+              <h3>Cloud y automatización</h3>
+              <p>Google Cloud, scripts en Python para automatizar tareas, monitoreo y diagnóstico.</p>
+            </div>
+            <div class="habilidad" data-revelar>
+              <h3>Cómo trabajo</h3>
+              <p>Resuelvo problemas con calma, trabajo bien en equipo y sigo aprendiendo. Inglés intermedio.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 11. Formación: información tomada del CV. -->
+      <section class="seccion formacion" id="formacion" aria-labelledby="titulo-formacion">
+        <div class="contenedor formacion__rejilla">
+          <div data-revelar>
+            <h2 id="titulo-formacion">Lo que he estudiado</h2>
+            <article class="estudio">
+              <h3>Ingeniería de Sistemas e Informática</h3>
+              <p>Universidad Continental, Huancayo · Bachiller · 2020 — 2025</p>
+            </article>
+            <article class="estudio">
+              <h3>Programa de Extensión Universitaria</h3>
+              <p>Osinergmin, Lima · 200 horas · Ene — Mar 2025</p>
+              <p>Fui seleccionado por excelencia académica. Regulación, gestión pública y tecnología en los sectores energético y minero.</p>
+            </article>
+          </div>
+          <aside class="certificaciones" aria-labelledby="titulo-certificaciones" data-revelar>
+            <h3 id="titulo-certificaciones">Certificaciones y cursos</h3>
+            <ul>
+              <li>
+                Associate Cloud Engineer
+                <small>Google Cloud · Universidad Continental, 2024</small>
+              </li>
+              <li>
+                Principios Básicos de Big Data
+                <small>Fundación Telefónica</small>
+              </li>
+              <li>
+                Desarrollo Móvil
+                <small>Universidad Continental</small>
+              </li>
+              <li>
+                Gestionando mis Finanzas
+                <small>Certificado de aprovechamiento</small>
+              </li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <!-- 12. Contacto: enlaces reales y botón para copiar el correo. -->
+      <section class="seccion contacto" id="contacto" aria-labelledby="titulo-contacto">
+        <div class="contenedor contacto__interior" data-revelar>
+          <h2 id="titulo-contacto">¿Conversamos?</h2>
+          <p>
+            Si tienes una oportunidad, un proyecto o simplemente quieres saber más de lo que hago,
+            escríbeme. Respondo pronto.
+          </p>
+          <div class="contacto__correo">
+            <a href="mailto:junior.lazoc@gmail.com" id="enlace-correo">junior.lazoc@gmail.com</a>
+            <button class="boton-copiar" id="copiar-correo" type="button" hidden>Copiar correo</button>
+          </div>
+          <p class="estado-copia" id="estado-copia" role="status" aria-live="polite"></p>
+          <ul class="contacto__enlaces">
+            <li>
+              <a href="https://wa.me/51964007096" target="_blank" rel="noopener noreferrer">WhatsApp · +51 964 007 096</a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/juniorlazo" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </li>
+            <li>
+              <a href="assets/CV_Junior_Lazo_Chileno.pdf" download>Descargar mi CV (PDF)</a>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <!-- 13. Pie de página. -->
+    <footer class="pie-pagina">
+      <div class="contenedor pie-pagina__interior">
+        <p>Hecho a mano por Junior Jorge Lazo Chileno · Huancayo, Perú</p>
+        <a href="#inicio">Volver arriba ↑</a>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,143 @@
+/* ============================================================
+   ADAPTABLE.CSS — Tableta, móvil e impresión.
+   ============================================================ */
+
+
+/* 01. Tabletas y portátiles pequeños. */
+
+@media (max-width: 980px) {
+  .inicio__rejilla, .formacion__rejilla {
+    grid-template-columns: 1fr;
+    gap: 56px;
+  }
+  .sobre-mi__rejilla {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .ahora {
+    max-width: 460px;
+  }
+  .habilidades__rejilla {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 02. Móvil: el menú se pliega solo si JavaScript está disponible. */
+
+@media (max-width: 760px) {
+  body {
+    font-size: 16px;
+  }
+  .contenedor {
+    width: calc(100% - 40px);
+  }
+  .seccion {
+    padding-block: 64px;
+  }
+  .encabezado__interior {
+    flex-wrap: wrap;
+    gap: 0;
+    padding-block: 12px;
+    min-height: 64px;
+  }
+  .navegacion {
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 6px 18px;
+    margin-top: 8px;
+  }
+  .menu-mejorado .boton-menu {
+    display: inline-block;
+  }
+  .menu-mejorado .navegacion {
+    display: none;
+  }
+  .menu-mejorado .navegacion--abierta {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding-block: 8px;
+  }
+  .menu-mejorado .navegacion a,
+  .menu-mejorado .navegacion .navegacion__destacado {
+    font-size: 17px;
+    padding: 12px 0;
+    border: 0;
+    border-top: 1px solid var(--borde);
+    border-radius: 0;
+  }
+  .inicio__rejilla {
+    padding-block: 56px 48px;
+  }
+  .inicio__descripcion {
+    font-size: 18px;
+  }
+  .ahora {
+    transform: none;
+    padding: 32px 24px 20px;
+  }
+  .destacado {
+    font-size: 22px;
+  }
+  .trayectoria {
+    padding-left: 24px;
+  }
+  .puesto {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+  .puesto::before {
+    left: -33px;
+  }
+  .proyectos__rejilla, .habilidades__rejilla {
+    grid-template-columns: 1fr;
+  }
+  .proyecto {
+    padding: 26px 22px;
+  }
+  .contacto__enlaces {
+    flex-direction: column;
+    align-items: center;
+  }
+  .pie-pagina__interior {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* 03. Impresión: información legible, sin menú ni botones. */
+
+@media print {
+  body {
+    background: white;
+    font-size: 11pt;
+  }
+  .encabezado, .acciones, .boton-copiar, .pie-pagina, .saltar-contenido {
+    display: none;
+  }
+  .contenedor {
+    width: 100%;
+  }
+  .seccion {
+    padding-block: 16px;
+  }
+  .contacto {
+    background: white;
+    color: black;
+  }
+  .contacto p {
+    color: #333;
+  }
+  .ahora {
+    transform: none;
+    box-shadow: none;
+  }
+  .puesto, .proyecto, .habilidad, .estudio, .certificaciones {
+    break-inside: avoid;
+  }
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

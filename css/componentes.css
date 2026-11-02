@@ -1,0 +1,456 @@
+/* ============================================================
+   COMPONENTES.CSS — El mismo orden que las secciones del HTML.
+   Convención: bloque__elemento y bloque--variante (BEM).
+   ============================================================ */
+
+
+/* 01. Encabezado y navegación. */
+
+.encabezado {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: #faf6efe6;
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--borde);
+}
+.encabezado__interior {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 72px;
+  gap: 24px;
+}
+.marca {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--fuente-titulos);
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.marca__inicial {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--terracota);
+  color: white;
+  font-size: 18px;
+}
+.navegacion {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+.navegacion a {
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--texto-secundario);
+  padding-block: 8px;
+}
+.navegacion a:hover, .navegacion a[aria-current] {
+  color: var(--tinta);
+}
+.navegacion a[aria-current]:not(.navegacion__destacado) {
+  box-shadow: inset 0 -2px 0 var(--terracota);
+}
+.navegacion .navegacion__destacado {
+  color: var(--tinta);
+  border: 2px solid var(--tinta);
+  border-radius: 999px;
+  padding: 6px 18px;
+}
+.navegacion .navegacion__destacado:hover {
+  background: var(--tinta);
+  color: var(--crema);
+}
+.boton-menu {
+  background: transparent;
+  color: var(--tinta);
+  border: 2px solid var(--tinta);
+  border-radius: 999px;
+  padding: 6px 18px;
+  font-weight: 600;
+}
+
+/* 02. Inicio. */
+
+.inicio__rejilla {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  align-items: center;
+  gap: 64px;
+  padding-block: 96px 72px;
+}
+.saludo {
+  font-family: var(--fuente-titulos);
+  font-size: 26px;
+  font-style: italic;
+  color: var(--salvia);
+  margin-bottom: 4px;
+}
+.inicio__descripcion {
+  font-size: 20px;
+  max-width: 560px;
+  margin-bottom: 36px;
+}
+.ahora {
+  position: relative;
+  background: var(--papel);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+  padding: 36px 32px 28px;
+  transform: rotate(1.5deg);
+}
+.ahora__avatar {
+  position: absolute;
+  top: -28px;
+  right: 28px;
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--salvia);
+  color: white;
+  font-family: var(--fuente-titulos);
+  font-size: 24px;
+  font-weight: 600;
+  border: 4px solid var(--crema);
+}
+.ahora__titulo {
+  font-size: 22px;
+  margin-bottom: 16px;
+}
+.ahora__lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.ahora__lista li {
+  display: flex;
+  gap: 12px;
+  padding-block: 10px;
+  border-top: 1px dashed var(--borde);
+  font-size: 16px;
+}
+.ahora__icono {
+  flex: none;
+}
+
+/* 03. Sobre mí. */
+
+.sobre-mi {
+  background: var(--papel);
+  border-block: 1px solid var(--borde);
+}
+.sobre-mi__rejilla {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 64px;
+}
+.destacado {
+  font-family: var(--fuente-titulos);
+  font-size: 26px;
+  line-height: 1.4;
+  color: var(--tinta);
+  margin-bottom: 24px;
+}
+
+/* 04. Experiencia: línea de tiempo con un punto por puesto. */
+
+.trayectoria {
+  border-left: 2px solid var(--borde);
+  padding-left: 36px;
+}
+.puesto {
+  position: relative;
+  display: grid;
+  grid-template-columns: 190px 1fr;
+  gap: 24px;
+  padding-bottom: 40px;
+}
+.puesto:last-child {
+  padding-bottom: 0;
+}
+.puesto::before {
+  content: "";
+  position: absolute;
+  left: -45px;
+  top: 8px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--crema);
+  border: 3px solid var(--terracota);
+}
+.puesto__periodo {
+  font-weight: 600;
+  color: var(--tinta);
+  font-size: 15px;
+}
+.puesto__empresa {
+  color: var(--salvia);
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+.insignia {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 0 10px;
+  border-radius: 999px;
+  background: var(--salvia-suave);
+  color: var(--salvia);
+  font-size: 13px;
+}
+
+/* 05. Proyectos. */
+
+.proyectos {
+  background: var(--papel);
+  border-block: 1px solid var(--borde);
+}
+.cabecera-seccion {
+  max-width: 640px;
+  margin-bottom: 40px;
+}
+.cabecera-seccion h2 {
+  margin-bottom: 16px;
+}
+.proyectos__rejilla {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+.proyecto {
+  border-radius: var(--radio);
+  padding: 32px;
+  transition: transform var(--transicion), box-shadow var(--transicion);
+}
+.proyecto:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--sombra);
+}
+.proyecto--salvia {
+  background: var(--salvia-suave);
+}
+.proyecto--terracota {
+  background: var(--terracota-suave);
+}
+.proyecto--arena {
+  background: var(--arena-suave);
+}
+.proyecto--lavanda {
+  background: var(--lavanda-suave);
+}
+.proyecto h3 {
+  font-family: var(--fuente-titulos);
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+.proyecto p, .proyecto__logros {
+  color: #4f473f;
+}
+.proyecto .proyecto__tipo {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--tinta);
+  margin-bottom: 8px;
+}
+.proyecto__logros {
+  margin: 0 0 20px;
+  padding-left: 20px;
+  font-size: 15px;
+}
+.proyecto__logros li {
+  margin-bottom: 4px;
+}
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.chips li {
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: #ffffffb3;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* 06. Habilidades. */
+
+.habilidades__rejilla {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+.habilidad {
+  border-top: 3px solid var(--terracota);
+  padding-top: 20px;
+}
+.habilidad p {
+  font-size: 15px;
+}
+
+/* 07. Formación. */
+
+.formacion {
+  padding-top: 0;
+}
+.formacion__rejilla {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+.estudio {
+  padding-block: 20px;
+  border-bottom: 1px solid var(--borde);
+}
+.estudio p {
+  margin-bottom: 6px;
+}
+.certificaciones {
+  background: var(--papel);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  padding: 32px;
+}
+.certificaciones h3 {
+  font-family: var(--fuente-titulos);
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+.certificaciones ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.certificaciones li {
+  padding-block: 12px;
+  border-top: 1px dashed var(--borde);
+  font-weight: 500;
+}
+.certificaciones small {
+  display: block;
+  color: var(--texto-secundario);
+  font-weight: 400;
+  font-size: 14px;
+}
+
+/* 08. Contacto y pie. */
+
+.contacto {
+  background: var(--salvia);
+  color: white;
+  text-align: center;
+}
+.contacto__interior {
+  max-width: 720px;
+}
+.contacto h2 {
+  font-size: clamp(36px, 6vw, 68px);
+  margin-bottom: 20px;
+}
+.contacto p {
+  color: #eef3ec;
+  font-size: 18px;
+}
+.contacto__correo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 32px;
+}
+.contacto__correo > a {
+  font-family: var(--fuente-titulos);
+  font-size: clamp(22px, 3.4vw, 34px);
+  text-underline-offset: 6px;
+  text-decoration-thickness: 2px;
+  overflow-wrap: anywhere;
+}
+.boton-copiar {
+  background: transparent;
+  border: 2px solid #ffffffb3;
+  border-radius: 999px;
+  padding: 6px 16px;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+}
+.boton-copiar:hover {
+  background: #ffffff1f;
+}
+.contacto .estado-copia {
+  min-height: 24px;
+  margin: 8px 0;
+  font-size: 15px;
+}
+.contacto__enlaces {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  list-style: none;
+  margin: 16px 0 0;
+  padding: 0;
+}
+.contacto__enlaces a {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 999px;
+  background: #ffffff1f;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 15px;
+  transition: background var(--transicion);
+}
+.contacto__enlaces a:hover {
+  background: #ffffff38;
+}
+.contacto :focus-visible {
+  outline-color: white;
+}
+.pie-pagina {
+  padding-block: 28px;
+}
+.pie-pagina__interior {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.pie-pagina p {
+  margin: 0;
+  font-size: 14px;
+}
+.pie-pagina a {
+  color: var(--texto-secundario);
+  font-size: 14px;
+}
+
+/* 09. Página simple (404). */
+
+.pagina-simple {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 24px;
+}
+.pagina-simple p {
+  max-width: 440px;
+  margin: 0 auto 32px;
+}

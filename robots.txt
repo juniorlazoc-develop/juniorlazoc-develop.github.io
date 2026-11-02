@@ -1,0 +1,6 @@
+# Permite que los buscadores lean todo el sitio.
+# Si cambias de dominio, actualiza también la dirección del sitemap.
+User-agent: *
+Allow: /
+
+Sitemap: https://juniorlazoc-develop.github.io/sitemap.xml
