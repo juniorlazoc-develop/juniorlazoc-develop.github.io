@@ -23,7 +23,7 @@ Un sprint es una etapa corta con un objetivo, tareas y una forma concreta de com
 
 ## Sprint 3 — Tus proyectos reales (hecho, 1 nov 2026)
 
-- Tarjetas para Detector de cortes masivos, AgroChupaca, Mi Nube y Central 105, con problema, solución y tecnologías.
+- Tarjetas para el Sistema de detección y clasificación de servicios caídos, AgroChupaca, Mi Nube y Central 105, con problema, solución y tecnologías.
 - Los repositorios son privados; la página ofrece mostrarlos en una entrevista.
 
 ## Sprint 4 — Código en GitHub (hecho, 1 nov 2026)
