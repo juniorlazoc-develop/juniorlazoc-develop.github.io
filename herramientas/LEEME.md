@@ -12,12 +12,12 @@ Archivos de apoyo. No forman parte de la página que ven los visitantes.
 
 Edge abre la página sin ventana y guarda una captura de 1200 × 630 píxeles, el tamaño que recomiendan las redes sociales.
 
-## Regenerar el CV
+## Regenerar el CV (formato Harvard)
 
-`cv.html` es la fuente de `assets/CV_Junior_Lazo_Chileno.pdf`: una sola hoja, sin foto, una sola columna y los colores del portafolio (franja azul marino arriba y detalles en turquesa). Si cambias algo del CV, edita ese archivo y, desde la carpeta del proyecto en PowerShell, ejecuta:
+`cv.html` es la fuente de `assets/CV_Junior_Lazo_Chileno.pdf`: formato Harvard, una sola hoja, sin foto, una sola columna, letra serif, solo negro y títulos de sección estándar, para que los filtros automáticos (ATS) lean bien el texto. Si cambias algo del CV, edita ese archivo y, desde la carpeta del proyecto en PowerShell, ejecuta:
 
 ```powershell
-& "${env:ProgramFiles(x86)}\Microsoft\Edge\Application\msedge.exe" --headless=new --disable-gpu --no-pdf-header-footer --virtual-time-budget=8000 "--print-to-pdf=$PWD\assets\CV_Junior_Lazo_Chileno.pdf" "file:///$PWD/herramientas/cv.html"
+& "${env:ProgramFiles(x86)}\Microsoft\Edge\Application\msedge.exe" --headless=new --disable-gpu --no-pdf-header-footer "--print-to-pdf=$PWD\assets\CV_Junior_Lazo_Chileno.pdf" "file:///$PWD/herramientas/cv.html"
 ```
 
-`--virtual-time-budget=8000` le da tiempo a Edge para descargar las letras (DM Sans y Space Grotesk), así que necesitas internet. Revisa que siga en una sola página: si se pasa a una segunda, acorta alguna viñeta.
+Revisa que siga en una sola página: si se pasa a una segunda, acorta alguna viñeta.
