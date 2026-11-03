@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <title>CV Junior Jorge Lazo Chileno</title>
+    <!--
+      Fuente del CV: una página, sin foto, una sola columna (fácil de leer
+      para los sistemas que filtran CV) y los colores del portafolio.
+      Para regenerar assets/CV_Junior_Lazo_Chileno.pdf, mira herramientas/LEEME.md.
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --marino: #0b1426;
+        --superficie: #172a4d;
+        --acento: #1a7f6e;
+        --turquesa: #7fe0c8;
+        --texto: #1c2433;
+        --suave: #5b6578;
+        --linea: #d5dbe6;
+      }
+      @page { size: A4; margin: 0; }
+      * { box-sizing: border-box; }
+      html, body { margin: 0; }
+      body {
+        font-family: "DM Sans", "Segoe UI", Arial, sans-serif;
+        font-size: 9.1pt;
+        line-height: 1.3;
+        color: var(--texto);
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      /* Encabezado: franja azul marino como en el portafolio */
+      header {
+        background: var(--marino);
+        color: #eef3ff;
+        padding: 9mm 15mm 6mm;
+        border-bottom: 3px solid var(--turquesa);
+      }
+      h1 {
+        margin: 0;
+        font-family: "Space Grotesk", "Segoe UI", Arial, sans-serif;
+        font-size: 23pt;
+        font-weight: 700;
+        letter-spacing: .3px;
+        line-height: 1.1;
+      }
+      .titulo {
+        margin: 3px 0 7px;
+        color: var(--turquesa);
+        font-size: 11pt;
+        font-weight: 500;
+      }
+      .contacto {
+        margin: 0;
+        color: #b8c5e0;
+        font-size: 8.9pt;
+      }
+      .contacto a { color: inherit; text-decoration: none; }
+      .contacto span + span::before { content: "·"; margin: 0 6px; color: var(--turquesa); }
+
+      main { padding: 3mm 15mm 0; }
+      h2 {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin: 7px 0 4px;
+        font-family: "Space Grotesk", "Segoe UI", Arial, sans-serif;
+        font-size: 10.5pt;
+        font-weight: 700;
+        color: var(--superficie);
+        text-transform: uppercase;
+        letter-spacing: 1.2px;
+      }
+      h2::after { content: ""; flex: 1; height: 1px; background: var(--linea); }
+      p { margin: 0; }
+      .perfil { color: var(--texto); }
+
+      .entrada { margin-bottom: 5px; }
+      .fila {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 12px;
+      }
+      .lugar { font-weight: 700; color: var(--marino); }
+      .fecha { color: var(--suave); font-size: 8.8pt; white-space: nowrap; }
+      .cargo { color: var(--acento); font-weight: 500; }
+      ul { margin: 2px 0 0; padding-left: 14px; }
+      li { margin: 0 0 1px; }
+      li::marker { color: var(--acento); }
+
+      .habilidades {
+        display: grid;
+        grid-template-columns: 30mm 1fr;
+        gap: 2px 10px;
+        margin: 0;
+      }
+      .habilidades dt { font-weight: 700; color: var(--marino); }
+      .habilidades dd { margin: 0; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Junior Jorge Lazo Chileno</h1>
+      <p class="titulo">Bachiller en Ingeniería de Sistemas · Redes y Desarrollo Web</p>
+      <p class="contacto">
+        <span>Huancayo, Perú</span><span>964 007 096</span><span><a href="mailto:junior.lazoc@gmail.com">junior.lazoc@gmail.com</a></span><span><a href="https://linkedin.com/in/juniorlazo">linkedin.com/in/juniorlazo</a></span><span><a href="https://juniorlazoc-develop.github.io/">juniorlazoc-develop.github.io</a></span>
+      </p>
+    </header>
+
+    <main>
+      <h2>Perfil</h2>
+      <p class="perfil">
+        Bachiller en Ingeniería de Sistemas con experiencia en monitoreo de redes de fibra óptica (GPON) sobre OLT Nokia y ZTE,
+        diagnóstico de incidencias y soporte técnico. Desarrollo herramientas web en Python, Django, FastAPI y React para
+        automatizar tareas de red, como un sistema que detecta y clasifica caídas masivas de servicio.
+      </p>
+
+      <h2>Experiencia</h2>
+      <div class="entrada">
+        <div class="fila"><span class="lugar">Global Fiber · Huancayo</span><span class="fecha">Sep 2025 – Actualidad</span></div>
+        <p class="cargo">Auxiliar de Redes</p>
+        <ul>
+          <li>Monitoreo de OLT Nokia y ZTE para supervisar el estado de la red de acceso de fibra óptica (GPON).</li>
+          <li>Diagnóstico y atención de incidencias de conectividad, identificando si la falla afecta a un cliente o a un sector de la red.</li>
+          <li>Soporte técnico remoto y en campo a clientes residenciales y corporativos.</li>
+          <li>Trabajo coordinado con el equipo de redes para la solución oportuna de incidencias y la continuidad del servicio.</li>
+        </ul>
+      </div>
+      <div class="entrada">
+        <div class="fila"><span class="lugar">Policía Nacional del Perú – OFITIC Región Junín · Huancayo</span><span class="fecha">Abr – Jul 2024</span></div>
+        <p class="cargo">Arquitectura y Desarrollo de Sistema Web – Proyecto Central 105</p>
+        <ul>
+          <li>Diseñé la arquitectura del sistema para la plataforma web y modelé la base de datos para la gestión de emergencias.</li>
+          <li>Realicé la documentación técnica, apoyé en el desarrollo e implementé mejoras para optimizar la gestión de información.</li>
+        </ul>
+      </div>
+      <div class="entrada">
+        <div class="fila"><span class="lugar">ML Services SAC · Huancayo</span><span class="fecha">Nov 2023 – Jun 2024</span></div>
+        <p class="cargo">Administrador</p>
+        <ul>
+          <li>Implementé soluciones tecnológicas para optimizar procesos internos.</li>
+          <li>Brindé soporte técnico y mantenimiento preventivo de la infraestructura tecnológica.</li>
+          <li>Analicé y mejoré los procesos operativos mediante herramientas tecnológicas.</li>
+        </ul>
+      </div>
+      <div class="entrada">
+        <div class="fila"><span class="lugar">San Berman Constructora &amp; Consultora · Huancayo</span><span class="fecha">Sep – Nov 2023</span></div>
+        <p class="cargo">Administrador de Base de Datos (DBA)</p>
+        <ul>
+          <li>Administré y optimicé el rendimiento de las bases de datos.</li>
+          <li>Apoyé en el diseño y mejora del Data Center y realicé pruebas de funcionamiento en la infraestructura tecnológica.</li>
+        </ul>
+      </div>
+
+      <h2>Proyectos</h2>
+      <div class="entrada">
+        <div class="fila"><span class="lugar">Sistema de detección y clasificación de servicios caídos</span><span class="fecha">2026 – Actualidad</span></div>
+        <ul>
+          <li>Sistema web en Python y Django que consulta las OLT por SSH, agrupa las ONT caídas por puerto, plano y troncal, y clasifica cada caída masiva.</li>
+        </ul>
+      </div>
+      <div class="entrada">
+        <div class="fila"><span class="lugar">Mi Nube – agenda personal</span><span class="fecha">2026</span></div>
+        <ul>
+          <li>Aplicación web con FastAPI y React: inicio de sesión con JWT, pendientes, bitácora y control de gastos.</li>
+        </ul>
+      </div>
+
+      <h2>Educación</h2>
+      <div class="entrada">
+        <div class="fila"><span class="lugar">Universidad Continental · Huancayo</span><span class="fecha">2020 – 2025</span></div>
+        <p class="cargo">Bachiller en Ingeniería de Sistemas e Informática</p>
+      </div>
+      <div class="entrada">
+        <div class="fila"><span class="lugar">Osinergmin · Lima</span><span class="fecha">Ene – Mar 2025</span></div>
+        <p class="cargo">Programa de Extensión Universitaria (PEU), seleccionado por excelencia académica</p>
+        <ul>
+          <li>Programa especializado de 200 horas en regulación, gestión pública y tecnologías aplicadas al sector energético y minero.</li>
+        </ul>
+      </div>
+
+      <h2>Habilidades y certificaciones</h2>
+      <dl class="habilidades">
+        <dt>Redes</dt>
+        <dd>TCP/IP, modelo OSI, routing y switching, OSPF, BGP, VLAN, subneteo, NAT/CGNAT, VPN IPsec, fibra óptica (GPON), monitoreo y diagnóstico de fallas.</dd>
+        <dt>Desarrollo</dt>
+        <dd>Python (automatización), Django, FastAPI, JavaScript, React.js, Next.js, Tailwind CSS, Node.js, PHP/Laravel, MySQL, Git/GitHub.</dd>
+        <dt>Cloud</dt>
+        <dd>Google Cloud – Associate Cloud Engineer, Universidad Continental (abril – junio 2024).</dd>
+        <dt>Certificaciones</dt>
+        <dd>Principios Básicos de Big Data (Fundación Telefónica); Desarrollo Móvil (Universidad Continental); Gestionando mis Finanzas.</dd>
+        <dt>Idiomas</dt>
+        <dd>Español (nativo), inglés (intermedio).</dd>
+        <dt>Competencias</dt>
+        <dd>Resolución de problemas, trabajo en equipo, comunicación efectiva y atención al cliente.</dd>
+      </dl>
+    </main>
+  </body>
+</html>
