@@ -1,7 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="14" fill="#0b1426" />
-  <rect x="8" y="14" width="48" height="36" rx="10" fill="#8ecdf2" />
-  <rect x="14" y="22" width="36" height="18" rx="6" fill="#0b1426" />
-  <rect x="20" y="27" width="8" height="8" rx="2" fill="#7fe0c8" />
-  <rect x="36" y="27" width="8" height="8" rx="2" fill="#7fe0c8" />
+  <!-- Logo de Junior Lazo: una J y una L trazadas como un enlace de fibra
+       que va de un nodo (turquesa) a otro (ámbar). -->
+  <defs>
+    <linearGradient id="trazo" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8ecdf2" />
+      <stop offset="1" stop-color="#7fe0c8" />
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="15" fill="#0b1426" />
+  <rect x="1.5" y="1.5" width="61" height="61" rx="13.5" fill="none" stroke="#2a4170" stroke-width="3" />
+  <path d="M27 15 V37 C27 46 21 50 13 47 M37 15 V48 H51" fill="none" stroke="url(#trazo)" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round" />
+  <circle cx="27" cy="15" r="5" fill="#7fe0c8" stroke="#0b1426" stroke-width="2.5" />
+  <circle cx="51" cy="48" r="5" fill="#ffd57a" stroke="#0b1426" stroke-width="2.5" />
 </svg>

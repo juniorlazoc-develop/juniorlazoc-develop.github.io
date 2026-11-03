@@ -22,7 +22,7 @@
     <meta property="og:image:alt" content="Junior Lazo: redes y desarrollo web">
     <meta name="twitter:card" content="summary_large_image">
     <title>Junior Lazo | Redes y desarrollo web</title>
-    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=2">
 
     <!-- 02. Tipografías: Space Grotesk (títulos con aire tecnológico) y DM Sans (texto fácil de leer). -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -49,7 +49,7 @@
     <header class="encabezado" id="encabezado">
       <div class="contenedor encabezado__interior">
         <a class="marca" href="#inicio">
-          <span class="marca__inicial" aria-hidden="true">jl</span>
+          <img class="marca__logo" src="assets/favicon.svg?v=2" alt="" width="40" height="40">
           Junior Lazo
         </a>
         <button class="boton-menu" id="boton-menu" type="button" aria-expanded="false" aria-controls="menu-principal" hidden>
@@ -83,7 +83,6 @@
           </div>
 
           <aside class="ahora" aria-labelledby="titulo-ahora" data-revelar>
-            <div class="ahora__avatar" data-mascota="celeste" aria-hidden="true"></div>
             <h2 class="ahora__titulo" id="titulo-ahora">Ahora mismo</h2>
             <ul class="ahora__lista">
               <li>
@@ -106,11 +105,6 @@
           </aside>
         </div>
 
-        <!-- Paseo: aquí caminan los robots (Bitbots). Son decorativos (aria-hidden). -->
-        <div class="contenedor">
-          <div class="paseo" data-paseo="4" aria-hidden="true"></div>
-          <button class="control-mascotas" id="control-mascotas" type="button" aria-pressed="false" hidden>Pausar robots</button>
-        </div>
       </section>
 
       <!-- 07. Sobre mí: presentación en primera persona. -->
@@ -378,22 +372,20 @@
             </li>
           </ul>
         </div>
-        <div class="contenedor">
-          <div class="paseo" data-paseo="3" aria-hidden="true"></div>
-        </div>
       </section>
     </main>
 
-    <!-- Saludo flotante: un robot asoma abajo a la derecha (lo controla mascotas.js). -->
-    <div class="saludo-mascota" id="saludo-mascota" aria-hidden="true">
-      <p class="saludo-mascota__texto" id="saludo-mascota-texto"></p>
-      <div class="saludo-mascota__dibujo" data-mascota="ambar"></div>
+    <!-- Bitbot: el único robot de la página. Vive en la esquina (lo controla mascotas.js). -->
+    <div class="bitbot" id="bitbot">
+      <p class="bitbot__texto" id="bitbot-texto" aria-live="polite"></p>
+      <button class="bitbot__dibujo" id="bitbot-dibujo" type="button" aria-label="Bitbot, el robot del portafolio: tócalo para que diga algo"></button>
     </div>
 
     <!-- 13. Pie de página. -->
     <footer class="pie-pagina">
       <div class="contenedor pie-pagina__interior">
         <p>Hecho a mano por Junior Jorge Lazo Chileno · Huancayo, Perú</p>
+        <button class="control-mascotas" id="control-mascotas" type="button" aria-pressed="false" hidden>Pausar animaciones</button>
         <a href="#inicio">Volver arriba ↑</a>
       </div>
     </footer>

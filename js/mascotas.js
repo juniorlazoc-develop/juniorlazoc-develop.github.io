@@ -1,12 +1,13 @@
 /**
  * MASCOTAS.JS
- * Los "Bitbots": robotitos que pasean por la página, saltan al tocarlos
- * y celebran los clics con chispas. Todo es decorativo: si no hay
- * JavaScript, o si el sistema pide menos movimiento, la página funciona igual.
+ * "Bitbot": un solo robot que vive en la esquina inferior derecha,
+ * salta al tocarlo y comenta los clics. También lanza chispas en cada clic.
+ * Todo es decorativo: si no hay JavaScript, o si el sistema pide menos
+ * movimiento, la página funciona igual.
  */
 window.Portafolio = window.Portafolio || {};
 
-/* Dibuja un Bitbot en SVG. Los colores salen del CSS (mascotas.css). */
+/* Dibuja a Bitbot en SVG. Los colores salen del CSS (mascotas.css). */
 window.Portafolio.dibujarBot = function dibujarBot() {
   return `
     <svg class="bot" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
@@ -28,14 +29,14 @@ window.Portafolio.dibujarBot = function dibujarBot() {
 window.Portafolio.iniciarMascotas = function iniciarMascotas() {
   const raiz = document.documentElement;
   const boton = document.querySelector('#control-mascotas');
-  const saludo = document.querySelector('#saludo-mascota');
-  const textoSaludo = document.querySelector('#saludo-mascota-texto');
+  const bitbot = document.querySelector('#bitbot');
+  const dibujo = document.querySelector('#bitbot-dibujo');
+  const texto = document.querySelector('#bitbot-texto');
   const menosMovimiento = window.matchMedia('(prefers-reduced-motion: reduce)');
   const clavePreferencia = 'portafolio-mascotas-pausadas';
-  const colores = ['celeste', 'turquesa', 'ambar', 'acero'];
   const frases = ['¡Hola!', '¡Ping: 1 ms!', '¡Conexión estable! 📶', '¡A toda fibra! ⚡', 'Bip bop 🤖', '¡Sigue explorando!', 'Sistema en línea ✅'];
   let pausaManual = false;
-  let temporizadorSaludo;
+  let temporizador;
 
   // El almacenamiento puede estar bloqueado por el navegador: no es un error fatal.
   try {
@@ -46,18 +47,18 @@ window.Portafolio.iniciarMascotas = function iniciarMascotas() {
     return lista[Math.floor(Math.random() * lista.length)];
   }
 
-  function estanQuietas() {
+  function estaQuieto() {
     return pausaManual || menosMovimiento.matches;
   }
 
   // 1. Pausa: botón accesible y preferencia del sistema.
   function actualizarPausa() {
-    raiz.classList.toggle('mascotas-pausadas', estanQuietas());
-    boton.setAttribute('aria-pressed', String(estanQuietas()));
+    raiz.classList.toggle('mascotas-pausadas', estaQuieto());
+    boton.setAttribute('aria-pressed', String(estaQuieto()));
     boton.disabled = menosMovimiento.matches;
     boton.textContent = menosMovimiento.matches
-      ? 'Robots quietos por tu sistema'
-      : pausaManual ? 'Reanudar robots 🤖' : 'Pausar robots';
+      ? 'Animaciones quietas por tu sistema'
+      : pausaManual ? 'Reanudar animaciones 🤖' : 'Pausar animaciones';
   }
 
   boton.hidden = false;
@@ -71,70 +72,31 @@ window.Portafolio.iniciarMascotas = function iniciarMascotas() {
     actualizarPausa();
   });
 
-  // 2. Hace que un robot salte y diga una frase.
-  function hacerSaltar(mascota, frase) {
-    const burbuja = mascota.querySelector('.mascota__burbuja');
-    if (burbuja && frase) burbuja.textContent = frase;
-    mascota.classList.remove('mascota--saltando');
-    void mascota.offsetWidth; // Reinicia la animación aunque ya estuviera saltando.
-    mascota.classList.add('mascota--saltando', 'mascota--hablando');
-    clearTimeout(mascota.temporizador);
-    mascota.temporizador = setTimeout(function terminarSalto() {
-      mascota.classList.remove('mascota--saltando', 'mascota--hablando');
-    }, 2400);
-  }
+  // 2. Bitbot aparece en la esquina y saluda.
+  dibujo.innerHTML = window.Portafolio.dibujarBot();
+  bitbot.classList.add('mascota--celeste');
+  setTimeout(function aparecer() {
+    bitbot.classList.add('bitbot--visible');
+    window.Portafolio.mostrarSaludo('¡Hola! Soy Bitbot 🤖');
+  }, 900);
 
-  // 3. Llena cada franja [data-paseo] con robots de colores y velocidades distintas.
-  document.querySelectorAll('[data-paseo]').forEach(function crearPaseo(paseo) {
-    const cantidad = Number(paseo.dataset.paseo) || 3;
-    const inicio = Math.floor(Math.random() * colores.length);
-    for (let i = 0; i < cantidad; i++) {
-      const mascota = document.createElement('div');
-      const duracion = 16 + Math.random() * 12;
-      mascota.className = 'mascota mascota--' + colores[(inicio + i) % colores.length];
-      if (i % 2 === 1) mascota.classList.add('mascota--al-reves');
-      // Retraso negativo: cada uno empieza en un punto distinto del recorrido.
-      mascota.style.setProperty('--duracion', duracion.toFixed(1) + 's');
-      mascota.style.setProperty('--retraso', (-Math.random() * duracion).toFixed(1) + 's');
-      // Posición fija para cuando no hay animación (movimiento reducido).
-      mascota.style.setProperty('--posicion', (10 + (80 / cantidad) * i).toFixed(0) + '%');
-      mascota.innerHTML = '<span class="mascota__burbuja"></span><div class="mascota__cuerpo">' +
-        window.Portafolio.dibujarBot() + '</div>';
-      mascota.addEventListener('click', function tocarMascota() {
-        hacerSaltar(mascota, alAzar(frases));
-      });
-      paseo.appendChild(mascota);
-    }
-  });
-
-  // 4. Robots sueltos (avatar de "Ahora mismo", saludo): solo se dibujan.
-  document.querySelectorAll('[data-mascota]').forEach(function dibujar(elemento) {
-    elemento.classList.add('mascota--' + (elemento.dataset.mascota || 'celeste'));
-    elemento.innerHTML = window.Portafolio.dibujarBot();
-  });
-  const avatar = document.querySelector('.ahora__avatar');
-  if (avatar) {
-    avatar.addEventListener('click', function tocarAvatar() {
-      avatar.classList.remove('mascota--saltando');
-      void avatar.offsetWidth;
-      avatar.classList.add('mascota--saltando');
-      window.Portafolio.mostrarSaludo('Soy Bitbot, el asistente de Junior 🤖');
-    });
-  }
-
-  // 5. Saludo flotante: un robot asoma abajo a la derecha con un mensaje.
-  window.Portafolio.mostrarSaludo = function mostrarSaludo(texto) {
-    textoSaludo.textContent = texto;
-    saludo.classList.remove('saludo-mascota--visible');
-    void saludo.offsetWidth;
-    saludo.classList.add('saludo-mascota--visible');
-    clearTimeout(temporizadorSaludo);
-    temporizadorSaludo = setTimeout(function esconderSaludo() {
-      saludo.classList.remove('saludo-mascota--visible');
+  // 3. Bitbot salta y dice una frase durante unos segundos.
+  window.Portafolio.mostrarSaludo = function mostrarSaludo(frase) {
+    texto.textContent = frase;
+    bitbot.classList.remove('bitbot--saltando');
+    void bitbot.offsetWidth; // Reinicia la animación aunque ya estuviera saltando.
+    bitbot.classList.add('bitbot--saltando', 'bitbot--hablando');
+    clearTimeout(temporizador);
+    temporizador = setTimeout(function callar() {
+      bitbot.classList.remove('bitbot--saltando', 'bitbot--hablando');
     }, 2800);
   };
 
-  // 6. Chispas en el punto del clic: cuadritos y rayos de la paleta.
+  dibujo.addEventListener('click', function tocarBitbot() {
+    window.Portafolio.mostrarSaludo(alAzar(frases));
+  });
+
+  // 4. Chispas en el punto del clic: cuadritos y rayos de la paleta.
   function lanzarChispas(x, y) {
     const tonos = ['#8ecdf2', '#7fe0c8', '#ffd57a', '#b9c8e8'];
     for (let i = 0; i < 16; i++) {
@@ -160,12 +122,12 @@ window.Portafolio.iniciarMascotas = function iniciarMascotas() {
   }
 
   // Cualquier enlace, botón o tarjeta de proyecto celebra el clic.
-  // data-saludo en el HTML define el mensaje del robot de la esquina.
+  // data-saludo en el HTML define lo que dice Bitbot.
   document.addEventListener('click', function celebrarClic(evento) {
     const objetivo = evento.target.closest('a, button, .proyecto');
-    if (!objetivo || objetivo.closest('.mascota')) return;
+    if (!objetivo || objetivo.closest('.bitbot')) return;
 
-    if (!estanQuietas()) {
+    if (!estaQuieto()) {
       // Con teclado no hay coordenadas: se usa el centro del elemento.
       const caja = objetivo.getBoundingClientRect();
       const x = evento.detail === 0 ? caja.left + caja.width / 2 : evento.clientX;
