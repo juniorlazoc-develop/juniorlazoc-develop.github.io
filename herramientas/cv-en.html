@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Junior Jorge Lazo Chileno - Resume - Network Operations and Automation</title>
+    <meta name="author" content="Junior Jorge Lazo Chileno">
+    <meta name="keywords" content="Junior Network Technician, NOC, Network Operations Center, network monitoring, GPON, FTTH, OLT, Nokia, ZTE, Python, Netmiko, network automation, remote">
+    <!--
+      CV en inglés, mismo formato ATS que cv.html. Para ofertas remotas o de empresas
+      extranjeras. Si cambias datos en cv.html, cámbialos también aquí.
+      Genera assets/CV_Junior_Lazo_Chileno_EN.pdf (pasos en herramientas/LEEME.md).
+    -->
+    <style>
+      @page { size: A4; margin: 10mm 13mm; }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: Calibri, "Segoe UI", Arial, sans-serif;
+        font-size: 9.8pt;
+        line-height: 1.2;
+        font-variant-ligatures: none;
+        font-feature-settings: "liga" 0, "clig" 0;
+        color: #000;
+      }
+      h1 {
+        margin: 0;
+        text-align: center;
+        font-size: 19pt;
+        letter-spacing: .6px;
+      }
+      .titulo {
+        margin: 2px 0 0;
+        text-align: center;
+        font-size: 11pt;
+        font-weight: bold;
+      }
+      .contacto {
+        margin: 3px 0 0;
+        text-align: center;
+        font-size: 9.8pt;
+      }
+      .contacto a { color: #000; text-decoration: none; }
+      h2 {
+        margin: 7px 0 2px;
+        padding-bottom: 1px;
+        border-bottom: 1px solid #000;
+        font-size: 10.8pt;
+        text-transform: uppercase;
+        letter-spacing: .8px;
+      }
+      p { margin: 0; }
+      .perfil { text-align: justify; }
+      .entrada { margin-bottom: 3px; }
+      .fila { display: flex; justify-content: space-between; gap: 12px; }
+      .fila span:last-child { white-space: nowrap; }
+      .lugar { font-weight: bold; }
+      .cargo { font-style: italic; }
+      ul { margin: 2px 0 0; padding-left: 15px; }
+      li { margin: 0 0 1px; }
+      .habilidades p { margin-bottom: 2px; }
+    </style>
+  </head>
+  <body>
+    <h1>JUNIOR JORGE LAZO CHILENO</h1>
+    <p class="titulo">Junior Network Technician | NOC Monitoring | GPON/FTTH | Network Automation with Python</p>
+    <p class="contacto">
+      Huancayo, Peru (open to remote work) | +51 964 007 096 |
+      <a href="mailto:junior.lazoc@gmail.com">junior.lazoc@gmail.com</a><br>
+      <a href="https://www.linkedin.com/in/juniorlazo">linkedin.com/in/juniorlazo</a> |
+      <a href="https://juniorlazoc-develop.github.io/">juniorlazoc-develop.github.io</a>
+    </p>
+
+    <h2>Summary</h2>
+    <p class="perfil">
+      Systems and Computer Engineering graduate (Bachelor's degree) working in the operation of GPON/FTTH fiber access
+      networks on Nokia and ZTE OLTs: remote monitoring, fault diagnosis and incident handling for residential and business
+      customers. I combine network operations with software development: I designed and deployed to production a Python
+      and Django system that detects and classifies mass outages and alerts the NOC via Telegram. Looking to join NOC, network engineering or automation teams.
+    </p>
+
+    <h2>Work Experience</h2>
+    <div class="entrada">
+      <div class="fila"><span class="lugar">Global Fiber</span><span>Huancayo, Peru</span></div>
+      <div class="fila"><span class="cargo">Junior Network Technician (Auxiliar de Redes)</span><span>September 2025 – Present</span></div>
+      <ul>
+        <li>Remotely monitor the GPON/FTTH access network on Nokia 7360 FX and ZTE ZXA10 C600 OLTs in other regions.</li>
+        <li>Diagnose incidents and determine whether a fault is individual or massive (PON port, area or trunk) to escalate it correctly.</li>
+        <li>Designed and deployed on the company server an automatic mass-outage detection system (Python, Django, Netmiko/SSH) that polls the OLTs every 30 seconds and sends alerts to the NOC via Telegram.</li>
+        <li>Defined with the NOC the mass-outage criteria by port, area and trunk, and the alert format the team receives.</li>
+        <li>Provide remote and on-site technical support to residential and business customers.</li>
+      </ul>
+    </div>
+    <div class="entrada">
+      <div class="fila"><span class="lugar">Peruvian National Police – OFITIC Junín Region</span><span>Huancayo, Peru</span></div>
+      <div class="fila"><span class="cargo">Software Architect – University thesis project "Central 105"</span><span>April – July 2024</span></div>
+      <ul>
+        <li>Led the software architecture of an emergency management web platform: requirements, database model, technical documentation and development support.</li>
+      </ul>
+    </div>
+    <div class="entrada">
+      <div class="fila"><span class="lugar">ML Services SAC</span><span>Huancayo, Peru</span></div>
+      <div class="fila"><span class="cargo">ERP System Administrator</span><span>November 2023 – June 2024</span></div>
+      <ul>
+        <li>Managed the company ERP system: sales records, product catalog and commercial data.</li>
+        <li>Provided user technical support and preventive maintenance of the IT infrastructure.</li>
+      </ul>
+    </div>
+    <div class="entrada">
+      <div class="fila"><span class="lugar">San Berman Constructora &amp; Consultora</span><span>Huancayo, Peru</span></div>
+      <div class="fila"><span class="cargo">Database Administrator (DBA)</span><span>September – November 2023</span></div>
+      <ul>
+        <li>Managed databases, optimized queries to improve performance and supported the design and upgrade of the data center.</li>
+      </ul>
+    </div>
+
+    <h2>Projects</h2>
+    <div class="entrada">
+      <div class="fila"><span class="lugar">GPON Service Outage Detection and Classification System</span><span>2026</span></div>
+      <ul>
+        <li>Queries Nokia and ZTE OLTs over read-only SSH, groups down ONTs by port, area and trunk, ignores customers that were already down to avoid false alarms, and generates the NOC alert. Python, Django, Netmiko, PostgreSQL, Linux, 117 automated tests.</li>
+      </ul>
+    </div>
+    <div class="entrada">
+      <div class="fila"><span class="lugar">AgroChupaca – agricultural field visit management</span><span>Academic project</span></div>
+      <ul>
+        <li>Web system with roles (admin, manager, technician), farm map, visit location check, PDF/Excel reports and KPI dashboard. Django, PostgreSQL, Leaflet, Chart.js.</li>
+      </ul>
+    </div>
+    <div class="entrada">
+      <div class="fila"><span class="lugar">Mi Nube – personal planner</span><span>2026</span></div>
+      <ul>
+        <li>Web app with a REST API: JWT authentication, Argon2 password hashing, tasks and expense tracking. FastAPI, React, SQLite, Docker.</li>
+      </ul>
+    </div>
+
+    <h2>Education</h2>
+    <div class="entrada">
+      <div class="fila"><span class="lugar">Universidad Continental</span><span>Huancayo, Peru</span></div>
+      <div class="fila"><span class="cargo">Bachelor's degree in Systems and Computer Engineering</span><span>2020 – 2025</span></div>
+    </div>
+    <div class="entrada">
+      <div class="fila"><span class="lugar">Osinergmin (Peru's energy and mining regulator)</span><span>Lima, Peru</span></div>
+      <div class="fila"><span class="cargo">University Extension Program (PEU), 200 hours – selected for academic excellence</span><span>January – March 2025</span></div>
+      <ul>
+        <li>Regulation, public management and technology applied to the energy and mining sectors.</li>
+      </ul>
+    </div>
+
+    <h2>Technical Skills</h2>
+    <div class="habilidades">
+      <p><b>Networking:</b> GPON, FTTH, OLT/ONT (Nokia, ZTE), TCP/IP, OSI model, routing and switching, OSPF, BGP, VLAN, subnetting, NAT/CGNAT, IPsec VPN, network monitoring, troubleshooting.</p>
+      <p><b>Automation and development:</b> Python, Netmiko, SSH, Django, FastAPI, REST APIs, JavaScript, React, Node.js, PHP/Laravel.</p>
+      <p><b>Databases and infrastructure:</b> PostgreSQL, MySQL, SQLite, ERP systems, Linux, Nginx, Docker, Git/GitHub, Google Cloud.</p>
+    </div>
+
+    <h2>Certifications and Languages</h2>
+    <div class="habilidades">
+      <p><b>Google Cloud Certified – Associate Cloud Engineer</b> (2024) · Big Data Fundamentals (Fundación Telefónica).</p>
+      <p><b>Languages:</b> Spanish (native), English (intermediate).</p>
+    </div>
+  </body>
+</html>
