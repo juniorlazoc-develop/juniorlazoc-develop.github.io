@@ -2,81 +2,139 @@
 <html lang="es">
   <head>
     <meta charset="utf-8">
-    <title>CV Junior Jorge Lazo Chileno</title>
+    <title>CV Junior Jorge Lazo Chileno - Redes GPON y automatización</title>
+    <meta name="author" content="Junior Jorge Lazo Chileno">
+    <meta name="keywords" content="Analista NOC, Ingeniero de Redes, GPON, FTTH, OLT, Nokia, ZTE, Python, Netmiko, Django, FastAPI, automatización de redes, soporte técnico">
     <!--
-      Fuente del CV en formato Harvard: una página, sin foto, una sola columna,
-      letra serif, solo negro y títulos de sección estándar para que los filtros
-      automáticos (ATS) lo lean bien.
+      CV ATS (formato Harvard). Es la versión que se sube a portales de empleo
+      (Computrabajo, Bumeran, LinkedIn, Indeed) y la que lee el filtro automático.
+      Reglas: una página, una sola columna, sin tablas ni imágenes, texto real,
+      títulos de sección estándar y palabras clave tal como aparecen en los avisos.
       Para regenerar assets/CV_Junior_Lazo_Chileno.pdf, mira herramientas/LEEME.md.
     -->
     <style>
-      @page { size: A4; margin: 12mm 15mm; }
+      @page { size: A4; margin: 10mm 13mm; }
       * { box-sizing: border-box; }
       body {
         margin: 0;
-        font-family: "Times New Roman", Times, Georgia, serif;
-        font-size: 10.1pt;
-        line-height: 1.22;
+        font-family: Calibri, "Segoe UI", Arial, sans-serif;
+        font-size: 9.8pt;
+        line-height: 1.2;
+        font-variant-ligatures: none;
+        font-feature-settings: "liga" 0, "clig" 0;
         color: #000;
       }
       h1 {
         margin: 0;
         text-align: center;
-        font-size: 20pt;
-        font-weight: bold;
-        letter-spacing: 1px;
+        font-size: 19pt;
+        letter-spacing: .6px;
       }
       .titulo {
         margin: 2px 0 0;
         text-align: center;
         font-size: 11pt;
+        font-weight: bold;
       }
       .contacto {
         margin: 3px 0 0;
         text-align: center;
-        font-size: 10pt;
+        font-size: 9.6pt;
       }
       .contacto a { color: #000; text-decoration: none; }
       h2 {
-        margin: 8px 0 3px;
+        margin: 7px 0 2px;
         padding-bottom: 1px;
         border-bottom: 1px solid #000;
-        font-size: 11pt;
-        font-weight: bold;
+        font-size: 10.8pt;
         text-transform: uppercase;
         letter-spacing: .8px;
       }
       p { margin: 0; }
       .perfil { text-align: justify; }
-      .entrada { margin-bottom: 4px; }
-      .fila {
-        display: flex;
-        justify-content: space-between;
-        gap: 12px;
-      }
+      .entrada { margin-bottom: 3px; }
+      .fila { display: flex; justify-content: space-between; gap: 12px; }
       .fila span:last-child { white-space: nowrap; }
       .lugar { font-weight: bold; }
       .cargo { font-style: italic; }
-      ul { margin: 2px 0 0; padding-left: 16px; }
+      ul { margin: 2px 0 0; padding-left: 15px; }
       li { margin: 0 0 1px; }
       .habilidades p { margin-bottom: 2px; }
     </style>
   </head>
   <body>
     <h1>JUNIOR JORGE LAZO CHILENO</h1>
-    <p class="titulo">Bachiller en Ingeniería de Sistemas e Informática | Redes y Desarrollo Web</p>
+    <p class="titulo">Analista de Redes y NOC | GPON/FTTH | Automatización de redes con Python</p>
     <p class="contacto">
-      Huancayo, Perú | 964 007 096 | <a href="mailto:junior.lazoc@gmail.com">junior.lazoc@gmail.com</a> |
-      <a href="https://linkedin.com/in/juniorlazo">linkedin.com/in/juniorlazo</a> |
+      Huancayo, Perú | +51 964 007 096 |
+      <a href="mailto:junior.lazoc@gmail.com">junior.lazoc@gmail.com</a> |
+      <a href="https://www.linkedin.com/in/juniorlazo">linkedin.com/in/juniorlazo</a> |
       <a href="https://juniorlazoc-develop.github.io/">juniorlazoc-develop.github.io</a>
     </p>
 
     <h2>Perfil profesional</h2>
     <p class="perfil">
-      Bachiller en Ingeniería de Sistemas e Informática con experiencia en monitoreo de redes de fibra óptica (GPON)
-      sobre OLT Nokia y ZTE, diagnóstico de incidencias de conectividad y soporte técnico a clientes residenciales y
-      corporativos. Desarrollo herramientas web en Python, Django, FastAPI y React para automatizar tareas de red.
+      Bachiller en Ingeniería de Sistemas e Informática con experiencia en operación de redes de acceso de fibra óptica
+      GPON/FTTH sobre OLT Nokia y ZTE: monitoreo, diagnóstico de fallas y atención de incidencias para clientes
+      residenciales y corporativos. Combino la operación de red con el desarrollo de software: diseñé y desplegué en
+      producción un sistema en Python y Django que detecta y clasifica cortes masivos y alerta al NOC por Telegram.
+      Busco aportar en equipos de NOC, ingeniería de redes o automatización de redes (NetDevOps).
     </p>
+
+    <h2>Experiencia profesional</h2>
+    <div class="entrada">
+      <div class="fila"><span class="lugar">Global Fiber</span><span>Huancayo, Perú</span></div>
+      <div class="fila"><span class="cargo">Auxiliar de Redes</span><span>Septiembre 2025 – Actualidad</span></div>
+      <ul>
+        <li>Monitoreo la red de acceso GPON/FTTH en OLT Nokia 7360 FX y ZTE ZXA10 C600, supervisando el estado de puertos PON y ONT.</li>
+        <li>Diagnostico incidencias de conectividad y determino si la falla es individual o masiva (puerto, plano o troncal) para escalarla al área correcta.</li>
+        <li>Diseñé y desplegué en el servidor de la empresa un sistema de detección automática de cortes masivos (Python, Django, Netmiko/SSH) que revisa las OLT en ciclos de 30 segundos y envía la alerta al NOC por Telegram.</li>
+        <li>Acordé con el NOC los criterios de corte masivo por puerto, plano y troncal, y el formato de la alerta que recibe el equipo.</li>
+        <li>Brindo soporte técnico remoto y en campo a clientes residenciales y corporativos, en coordinación con el equipo de redes.</li>
+      </ul>
+    </div>
+    <div class="entrada">
+      <div class="fila"><span class="lugar">Policía Nacional del Perú – OFITIC Región Junín</span><span>Huancayo, Perú</span></div>
+      <div class="fila"><span class="cargo">Arquitectura y Desarrollo de Sistema Web – Proyecto Central 105</span><span>Abril – Julio 2024</span></div>
+      <ul>
+        <li>Diseñé la arquitectura de la plataforma web y el modelo de base de datos para el registro y la gestión de emergencias.</li>
+        <li>Elaboré la documentación técnica del sistema y apoyé el desarrollo e implementación de mejoras en el manejo de la información.</li>
+      </ul>
+    </div>
+    <div class="entrada">
+      <div class="fila"><span class="lugar">ML Services SAC</span><span>Huancayo, Perú</span></div>
+      <div class="fila"><span class="cargo">Administrador</span><span>Noviembre 2023 – Junio 2024</span></div>
+      <ul>
+        <li>Implementé herramientas tecnológicas para optimizar procesos internos; brindé soporte técnico a usuarios y mantenimiento preventivo y correctivo de la infraestructura de TI.</li>
+      </ul>
+    </div>
+    <div class="entrada">
+      <div class="fila"><span class="lugar">San Berman Constructora &amp; Consultora</span><span>Huancayo, Perú</span></div>
+      <div class="fila"><span class="cargo">Administrador de Base de Datos (DBA)</span><span>Septiembre – Noviembre 2023</span></div>
+      <ul>
+        <li>Administré bases de datos, optimicé consultas para mejorar su rendimiento y apoyé el diseño y la mejora del data center.</li>
+      </ul>
+    </div>
+
+    <h2>Proyectos</h2>
+    <div class="entrada">
+      <div class="fila"><span class="lugar">Sistema de detección y clasificación de servicios caídos (GPON)</span><span>2026</span></div>
+      <ul>
+        <li>Consulta OLT Nokia y ZTE por SSH en modo solo lectura, agrupa las ONT caídas por puerto, plano y troncal, descarta clientes que ya estaban caídos para evitar falsas alarmas y genera la alerta en formato NOC. Python, Django, Netmiko, PostgreSQL, Linux (systemd, Nginx), 117 pruebas automáticas.</li>
+      </ul>
+    </div>
+    <div class="entrada">
+      <div class="fila"><span class="lugar">AgroChupaca – gestión de visitas técnicas agrarias</span><span>Proyecto académico</span></div>
+      <ul>
+        <li>Sistema web con roles (administrador, jefe, técnico), mapa de predios, verificación de ubicación de visitas, reportes PDF/Excel y tablero de indicadores. Django, PostgreSQL, Leaflet, Chart.js.</li>
+      </ul>
+    </div>
+    <div class="entrada">
+      <div class="fila"><span class="lugar">Mi Nube – agenda personal</span><span>2026</span></div>
+      <ul>
+        <li>Aplicación web con API REST: autenticación JWT, contraseñas cifradas con Argon2, pendientes, bitácora y control de gastos. FastAPI, React, SQLite, Docker.</li>
+      </ul>
+    </div>
 
     <h2>Educación</h2>
     <div class="entrada">
@@ -85,71 +143,20 @@
     </div>
     <div class="entrada">
       <div class="fila"><span class="lugar">Osinergmin</span><span>Lima, Perú</span></div>
-      <div class="fila"><span class="cargo">Programa de Extensión Universitaria (PEU), seleccionado por excelencia académica</span><span>Enero – Marzo 2025</span></div>
-      <ul>
-        <li>Programa especializado de 200 horas en regulación, gestión pública y tecnologías aplicadas al sector energético y minero.</li>
-      </ul>
+      <div class="fila"><span class="cargo">Programa de Extensión Universitaria (PEU), 200 horas – seleccionado por excelencia académica</span><span>Enero – Marzo 2025</span></div>
     </div>
 
-    <h2>Experiencia profesional</h2>
-    <div class="entrada">
-      <div class="fila"><span class="lugar">Global Fiber</span><span>Huancayo, Perú</span></div>
-      <div class="fila"><span class="cargo">Auxiliar de Redes</span><span>Septiembre 2025 – Actualidad</span></div>
-      <ul>
-        <li>Monitoreo de OLT Nokia y ZTE para supervisar el estado de la red de acceso de fibra óptica (GPON).</li>
-        <li>Diagnóstico y atención de incidencias de conectividad, identificando si la falla afecta a un cliente o a un sector de la red.</li>
-        <li>Soporte técnico remoto y en campo a clientes residenciales y corporativos.</li>
-        <li>Trabajo coordinado con el equipo de redes para la solución oportuna de incidencias y la continuidad del servicio.</li>
-      </ul>
-    </div>
-    <div class="entrada">
-      <div class="fila"><span class="lugar">Policía Nacional del Perú – OFITIC Región Junín</span><span>Huancayo, Perú</span></div>
-      <div class="fila"><span class="cargo">Arquitectura y Desarrollo de Sistema Web – Proyecto Central 105</span><span>Abril – Julio 2024</span></div>
-      <ul>
-        <li>Diseñé la arquitectura del sistema para la plataforma web y modelé la base de datos para la gestión de emergencias.</li>
-        <li>Realicé la documentación técnica, apoyé en el desarrollo e implementé mejoras para optimizar la gestión de información.</li>
-      </ul>
-    </div>
-    <div class="entrada">
-      <div class="fila"><span class="lugar">ML Services SAC</span><span>Huancayo, Perú</span></div>
-      <div class="fila"><span class="cargo">Administrador</span><span>Noviembre 2023 – Junio 2024</span></div>
-      <ul>
-        <li>Implementé soluciones tecnológicas para optimizar procesos internos.</li>
-        <li>Brindé soporte técnico y mantenimiento preventivo de la infraestructura tecnológica.</li>
-        <li>Analicé y mejoré los procesos operativos mediante herramientas tecnológicas.</li>
-      </ul>
-    </div>
-    <div class="entrada">
-      <div class="fila"><span class="lugar">San Berman Constructora &amp; Consultora</span><span>Huancayo, Perú</span></div>
-      <div class="fila"><span class="cargo">Administrador de Base de Datos (DBA)</span><span>Septiembre – Noviembre 2023</span></div>
-      <ul>
-        <li>Administré y optimicé el rendimiento de las bases de datos.</li>
-        <li>Apoyé en el diseño y mejora del Data Center y realicé pruebas de funcionamiento en la infraestructura tecnológica.</li>
-      </ul>
-    </div>
-
-    <h2>Proyectos</h2>
-    <div class="entrada">
-      <div class="fila"><span class="lugar">Sistema de detección y clasificación de servicios caídos</span><span>2026 – Actualidad</span></div>
-      <ul>
-        <li>Sistema web en Python y Django que consulta las OLT por SSH, agrupa las ONT caídas por puerto, plano y troncal, y clasifica cada caída masiva.</li>
-      </ul>
-    </div>
-    <div class="entrada">
-      <div class="fila"><span class="lugar">Mi Nube – agenda personal</span><span>2026</span></div>
-      <ul>
-        <li>Aplicación web con FastAPI y React: inicio de sesión con JWT, pendientes, bitácora y control de gastos.</li>
-      </ul>
-    </div>
-
-    <h2>Habilidades y certificaciones</h2>
+    <h2>Habilidades técnicas</h2>
     <div class="habilidades">
-      <p><b>Redes:</b> TCP/IP, modelo OSI, routing y switching, OSPF, BGP, VLAN, subneteo, NAT/CGNAT, VPN IPsec, fibra óptica (GPON), monitoreo y diagnóstico de fallas.</p>
-      <p><b>Desarrollo:</b> Python (automatización), Django, FastAPI, JavaScript, React.js, Next.js, Tailwind CSS, Node.js, PHP/Laravel, MySQL, Git/GitHub.</p>
-      <p><b>Cloud:</b> Google Cloud – Associate Cloud Engineer, Universidad Continental (abril – junio 2024).</p>
-      <p><b>Otras certificaciones:</b> Principios Básicos de Big Data (Fundación Telefónica); Desarrollo Móvil (Universidad Continental); Gestionando mis Finanzas.</p>
-      <p><b>Idiomas:</b> Español (nativo), inglés (intermedio).</p>
-      <p><b>Competencias:</b> resolución de problemas, trabajo en equipo, comunicación efectiva y atención al cliente.</p>
+      <p><b>Redes:</b> GPON, FTTH, OLT/ONT (Nokia, ZTE), TCP/IP, modelo OSI, routing y switching, OSPF, BGP, VLAN, subneteo, NAT/CGNAT, VPN IPsec, monitoreo de red, troubleshooting.</p>
+      <p><b>Automatización y desarrollo:</b> Python, Netmiko, SSH, Django, FastAPI, API REST, JavaScript, React, Node.js, PHP/Laravel, Telegram Bot API.</p>
+      <p><b>Bases de datos e infraestructura:</b> PostgreSQL, MySQL, SQLite, Linux, Nginx, Docker, Git/GitHub, Google Cloud.</p>
+    </div>
+
+    <h2>Certificaciones e idiomas</h2>
+    <div class="habilidades">
+      <p>Google Cloud – Associate Cloud Engineer, Universidad Continental (abril – junio 2024) · Principios Básicos de Big Data (Fundación Telefónica) · Desarrollo Móvil (Universidad Continental).</p>
+      <p><b>Idiomas:</b> Español (nativo), Inglés (intermedio). <b>Competencias:</b> resolución de problemas, trabajo en equipo, atención al cliente.</p>
     </div>
   </body>
 </html>
