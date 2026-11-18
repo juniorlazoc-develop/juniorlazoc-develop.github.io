@@ -389,6 +389,20 @@
   font-size: 12.5px;
 }
 
+.proyecto__codigo {
+  align-self: flex-start;
+  margin-top: 18px;
+  color: var(--salvia);
+  font-family: var(--fuente-mono);
+  font-size: 13px;
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+}
+.proyecto__codigo:hover,
+.proyecto__codigo:focus-visible {
+  color: var(--arena);
+}
+
 /* 06. Habilidades. */
 
 .habilidades__rejilla {
