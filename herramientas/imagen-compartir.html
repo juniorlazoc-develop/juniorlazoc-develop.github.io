@@ -9,9 +9,8 @@
     -->
     <meta charset="utf-8">
     <title>Imagen para compartir</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=DM+Sans:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700&family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:wght@400;500&display=swap">
     <link rel="stylesheet" href="../css/base.css">
-    <link rel="stylesheet" href="../css/mascotas.css">
     <style>
       html, body {
         margin: 0;
@@ -24,77 +23,87 @@
         box-sizing: border-box;
         width: 1200px;
         height: 630px;
-        padding: 86px 96px;
+        padding: 74px 96px;
         background:
-          radial-gradient(circle at 88% 18%, #1d3d73 0, transparent 42%),
-          radial-gradient(circle at 8% 95%, #0f3a4a 0, transparent 38%),
-          var(--marino);
+          linear-gradient(#ffffff08 1px, transparent 1px) 0 0 / 60px 60px,
+          linear-gradient(90deg, #ffffff08 1px, transparent 1px) 0 0 / 60px 60px,
+          var(--tinta);
+        color: var(--texto-claro);
         overflow: hidden;
       }
-      .saludo {
-        display: inline-block;
-        margin: 0 0 18px;
-        padding: 6px 20px;
-        border-radius: 8px;
-        background: var(--turquesa);
-        color: var(--marino);
-        font: 500 30px/1.3 var(--fuente-titulos);
+      .logo {
+        position: absolute;
+        top: 84px;
+        right: 96px;
+        width: 120px;
+        height: 120px;
+      }
+      .etiqueta {
+        color: var(--salvia);
+        font-size: 22px;
+        margin-bottom: 28px;
+      }
+      .etiqueta::before {
+        width: 44px;
       }
       h1 {
-        margin: 0 0 24px;
-        font-size: 110px;
+        margin: 0 0 26px;
+        font-size: 92px;
         line-height: 1;
-        color: var(--texto);
+        color: #f4efe4;
       }
       h1 span {
-        color: var(--celeste);
+        display: block;
+        color: var(--texto-claro-suave);
+        font-weight: 500;
       }
       .descripcion {
         margin: 0;
-        max-width: 720px;
-        font-size: 31px;
+        max-width: 760px;
+        font-size: 30px;
         line-height: 1.4;
-        color: var(--texto-secundario);
+        color: var(--texto-claro-suave);
       }
-      .robots {
-        position: absolute;
-        right: 80px;
-        bottom: 60px;
-        display: flex;
-        gap: 18px;
-        align-items: flex-end;
+      .descripcion b {
+        color: var(--texto-claro);
+        font-weight: 500;
       }
-      .robots div {
-        width: 110px;
-        height: 110px;
-      }
-      .robots div:nth-child(2) {
-        width: 150px;
-        height: 150px;
-      }
-      .suelo {
+      .enlace {
         position: absolute;
         left: 96px;
-        right: 80px;
-        bottom: 56px;
-        border-bottom: 4px dashed #8ecdf240;
+        right: 96px;
+        bottom: 70px;
+        height: 3px;
+        background: #2c6650;
+      }
+      .enlace::before, .enlace::after {
+        content: "";
+        position: absolute;
+        top: -9px;
+        width: 21px;
+        height: 21px;
+        border-radius: 50%;
+      }
+      .enlace::before { left: -4px; background: #4f9a76; }
+      .enlace::after { right: -4px; background: var(--laton); }
+      .web {
+        position: absolute;
+        right: 96px;
+        bottom: 96px;
+        font-family: var(--fuente-mono);
+        font-size: 20px;
+        color: var(--salvia);
       }
     </style>
   </head>
   <body>
     <div class="tarjeta">
-      <p class="saludo">👋 Hola, soy</p>
-      <h1>Junior <span>Lazo.</span></h1>
-      <p class="descripcion">Cuido redes de fibra óptica y construyo sistemas web que resuelven problemas reales.</p>
-      <div class="suelo"></div>
-      <div class="robots">
-        <div class="mascota--celeste" data-mascota></div>
-      </div>
+      <img class="logo" src="../assets/favicon.svg?v=3" alt="">
+      <p class="etiqueta">Analista de Redes · NOC · Automatización</p>
+      <h1>Junior Lazo <span>Chileno</span></h1>
+      <p class="descripcion">Redes de fibra óptica <b>GPON/FTTH</b> y herramientas en <b>Python</b> para detectar fallas a tiempo.</p>
+      <p class="web">juniorlazoc-develop.github.io</p>
+      <div class="enlace"></div>
     </div>
-    <script src="../js/mascotas.js"></script>
-    <script>
-      // Dibuja a Bitbot con la misma función del sitio.
-      document.querySelectorAll('[data-mascota]').forEach((el) => { el.innerHTML = window.Portafolio.dibujarBot(); });
-    </script>
   </body>
 </html>

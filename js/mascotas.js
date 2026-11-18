@@ -98,7 +98,7 @@ window.Portafolio.iniciarMascotas = function iniciarMascotas() {
 
   // 4. Chispas en el punto del clic: cuadritos y rayos de la paleta.
   function lanzarChispas(x, y) {
-    const tonos = ['#8ecdf2', '#7fe0c8', '#ffd57a', '#b9c8e8'];
+    const tonos = ['#2c6650', '#9ec3ad', '#b8955a', '#ebe4d6'];
     for (let i = 0; i < 16; i++) {
       const pieza = document.createElement('span');
       const angulo = Math.random() * Math.PI * 2;
