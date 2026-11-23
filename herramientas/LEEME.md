@@ -25,6 +25,8 @@ $edge = "${env:ProgramFiles(x86)}\Microsoft\Edge\Application\msedge.exe"
 
 Revisa que siga en **una sola página**; si se pasa, acorta alguna viñeta.
 
+Después cambia el número `?v=` de los dos enlaces al CV en `index.html` (por ejemplo `?v=20261123` → la fecha de hoy). Si no, los navegadores que ya lo descargaron siguen mostrando la versión vieja guardada en su caché.
+
 Las versiones con diseño y en inglés **no se publican**: están en `C:\Junior\Proyectos\cv-otras-versiones` (fuera de Git), con su propia guía.
 
 ### Reglas para que el filtro ATS no descarte el CV
